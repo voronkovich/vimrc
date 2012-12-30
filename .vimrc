@@ -36,6 +36,11 @@ map <F5> :!git add . && git commit<CR>
 map <F6> :!git push<CR>
 map <F12> :bd<CR>
 
+" PHPDoc
+au FileType php inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
+au FileType php nnoremap <C-P> :call PhpDocSingle()<CR>
+au FileType php vnoremap <C-P> :call PhpDocRange()<CR>
+
 colo wombat
 
 set tabstop=4
