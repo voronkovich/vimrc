@@ -4,7 +4,6 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
-filetype plugin indent on
 " /Vundle
 
 " Bundles
@@ -23,9 +22,27 @@ Bundle 'honza/snipmate-snippets'
 Bundle 'garbas/vim-snipmate'
 " /Bundles
 
-if filereadable('~/.vim/config.vim')
-    source '~/.vim/config.vim'
-endif
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
+
+filetype plugin indent on
+
+map <F2> :NERDTreeToggle<CR>
+map <F3> :BufExplorer<CR>
+map <F5> :!git add . && git commit<CR>
+map <F6> :!git push<CR>
+map <F12> :bd<CR>
+
+colo wombat
+
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
+set smartindent
+
+set number
 
 if filereadable(".vim")
     source .vim
