@@ -14,19 +14,22 @@ Bundle 'thisivan/vim-bufexplorer'
 Bundle 'docteurklein/php-getter-setter.vim'
 Bundle 'jeffreyiacono/vim-colors-wombat'
 
-" Snipmate and dependencies
+" Snipmate and its dependencies
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'honza/snipmate-snippets'
 Bundle 'garbas/vim-snipmate'
 " /Bundles
 
+" Pathogen
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 call pathogen#infect()
+" /Pathogen
 
 filetype plugin indent on
 
+" My settings
 map <F2> :NERDTreeToggle<CR>
 map <F3> :BufExplorer<CR>
 map <F5> :!git add . && git commit<CR>
