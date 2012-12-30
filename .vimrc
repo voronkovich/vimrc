@@ -25,6 +25,7 @@ Bundle 'garbas/vim-snipmate'
 
 if filereadable('~/.vim/config.vim')
     source '~/.vim/config.vim'
+endif
 
 if filereadable(".vim")
     source .vim
