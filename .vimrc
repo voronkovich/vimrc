@@ -23,24 +23,6 @@ Bundle 'honza/snipmate-snippets'
 Bundle 'garbas/vim-snipmate'
 " /Bundles
 
-filetype plugin on
-
-map <F2> :NERDTreeToggle<CR>
-map <F3> :BufExplorer<CR>
-map <F5> :!git add . && git commit<CR>
-map <F6> :!git push<CR>
-map <F12> :bd<CR>
-
-colo wombat
-
-set tabstop=4
-set shiftwidth=4
-set smarttab
-set expandtab
-set smartindent
-
-set number
-
 if filereadable('~/.vim/config.vim')
     source '~/.vim/config.vim'
 
