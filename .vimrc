@@ -36,6 +36,9 @@ set smartindent
 
 set number
 
+if filereadable('~/.vim/config.vim')
+    source '~/.vim/config.vim'
+
 if filereadable(".vim")
     source .vim
 endif
