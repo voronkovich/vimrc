@@ -15,6 +15,11 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'thisivan/vim-bufexplorer'
 Bundle 'docteurklein/php-getter-setter.vim'
 Bundle 'jeffreyiacono/vim-colors-wombat'
+
+" Snipmate and dependencies
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'honza/snipmate-snippets'
 Bundle 'garbas/vim-snipmate'
 " /Bundles
 
