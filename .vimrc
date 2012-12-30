@@ -7,7 +7,6 @@ Bundle 'gmarik/vundle'
 " /Vundle
 
 " Bundles
-Bundle 'voronkovich/vim-configuration'
 Bundle 'voronkovich/phpdoc.vim'
 Bundle 'voronkovich/vim-snippets'
 Bundle 'scrooloose/nerdtree'
