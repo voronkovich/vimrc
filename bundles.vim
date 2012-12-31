@@ -3,10 +3,10 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-Bundle 'gmarik/vundle'
 " /Vundle
 
 " Bundles
+Bundle 'gmarik/vundle'
 Bundle 'voronkovich/vim-phpdoc'
 Bundle 'voronkovich/vim-snippets'
 Bundle 'scrooloose/nerdtree'
