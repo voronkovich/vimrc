@@ -10,7 +10,8 @@ Bundle 'gmarik/vundle'
 Bundle 'voronkovich/vim-phpdoc'
 Bundle 'voronkovich/vim-snippets'
 Bundle 'scrooloose/nerdtree'
-Bundle 'arnaud-lb/vim-php-namespace'
+Bundle 'phpfolding.vim'
+Bundle 'voronkovich/vim-php-namespace'
 Bundle 'thisivan/vim-bufexplorer'
 Bundle 'docteurklein/php-getter-setter.vim'
 Bundle 'jeffreyiacono/vim-colors-wombat'
@@ -19,6 +20,9 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'honza/snipmate-snippets'
 Bundle 'garbas/vim-snipmate'
+" FuzzyFinder and its dependencies
+Bundle 'L9'
+Bundle 'FuzzyFinder'
 " /Bundles
 
 " Pathogen
