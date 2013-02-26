@@ -21,8 +21,9 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'honza/snipmate-snippets'
 Bundle 'garbas/vim-snipmate'
 " FuzzyFinder and its dependencies
-Bundle 'L9'
-Bundle 'FuzzyFinder'
+" Bundle 'L9'
+" Bundle 'FuzzyFinder'
+Bundle 'kien/ctrlp.vim'
 " /Bundles
 
 " Pathogen
