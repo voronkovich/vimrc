@@ -10,7 +10,7 @@ if [ ! -d "bundle"  ]; then
     mkdir "bundle"
 fi;
 
-echo "source \$HOME/.vim/vimrc/vimrc" > "$HOME/.vimrc"
+ln -s $VIMDIR/vimrc/vimrc $HOME/.vimrc
 
 # Install pathogen
 curl -Sso autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim;

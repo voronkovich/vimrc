@@ -2,11 +2,18 @@ source ~/.vim/vimrc/bundles.vim
 filetype plugin indent on
 
 " My settings
-map <F2> :NERDTreeToggle<CR>
-map <F3> :BufExplorer<CR>
-map <F5> :!git add . && git commit<CR>
-map <F6> :!git push<CR>
-map <F12> :bd<CR>
+nmap <Leader>v :e $MYVIMRC<CR>
+nmap <BS> :NERDTreeToggle<CR>
+nmap <Leader>b :BufExplorer<CR>
+nmap <Leader>bd :bd<CR>
+map  <C-s> <ESC>:w<CR>
+imap <C-s> <ESC>:w<CR>i
+
+" File templates
+autocmd BufNewFile *.py 0r ~/.vim/templates/template.py
+autocmd BufNewFile *.xml 0r ~/.vim/templates/template.xml
+autocmd BufNewFile *.php 0r ~/.vim/templates/template.php
+autocmd BufNewFile *.html 0r ~/.vim/templates/template.html
 
 " PHPDoc
 au FileType php inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
