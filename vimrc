@@ -6,8 +6,8 @@ nmap <Leader>v :e $MYVIMRC<CR>
 nmap <BS> :NERDTreeToggle<CR>
 nmap <Leader>b :BufExplorer<CR>
 nmap <Leader>bd :bd<CR>
-map  <C-s> <ESC>:w<CR>
-imap <C-s> <ESC>:w<CR>i
+map <C-S> <ESC>:w<CR> " Add: alias vim="stty stop '' -ixoff ; vim" in your bash aliases
+imap <C-S> <ESC>:w<CR>i
 
 " File templates
 autocmd! BufNewFile * silent! 0r ~/.vim/vimrc/templates/template.%:e
