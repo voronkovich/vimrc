@@ -12,6 +12,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'thisivan/vim-bufexplorer'
 Bundle 'kien/ctrlp.vim'
 Bundle 'voronkovich/vim-snippets'
+Bundle 'MarcWeber/vim-addon-local-vimrc'
 
 " Colorschemes
 Bundle 'jeffreyiacono/vim-colors-wombat'
@@ -22,7 +23,7 @@ Bundle 'voronkovich/vim-php-namespace'
 Bundle 'voronkovich/vim-phpdoc'
 Bundle 'docteurklein/php-getter-setter.vim'
 Bundle 'docteurklein/vim-symfony'
-Bundle 'docteurklein/vim-phpunit'
+Bundle 'joonty/vim-phpunitqf.git'
 
 " Snipmate and its dependencies
 Bundle 'MarcWeber/vim-addon-mw-utils'

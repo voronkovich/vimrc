@@ -2,12 +2,15 @@ source ~/.vim/vimrc/bundles.vim
 filetype plugin indent on
 
 " My settings
-nmap <Leader>v :e $MYVIMRC<CR>
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>rv :so $MYVIMRC<CR>
+
 nmap <BS> :NERDTreeToggle<CR>
 nmap <Leader>b :BufExplorer<CR>
 nmap <Leader>bd :bd<CR>
 map <C-S> <ESC>:w<CR> " Add: alias vim="stty stop '' -ixoff ; vim" in your bash aliases
-imap <C-S> <ESC>:w<CR>i
+imap <C-S> <ESC>:w<CR>
 
 " File templates
 autocmd! BufNewFile * silent! 0r ~/.vim/vimrc/templates/template.%:e
@@ -27,10 +30,6 @@ set expandtab
 set smartindent
 
 set number
-
-if filereadable(".vim")
-    source .vim
-endif
 
 function! PhpGetClassUnderCursor()
     let cursor = getpos(".")
