@@ -15,6 +15,14 @@ imap <C-j> <C-o>j
 imap <C-k> <C-o>k
 imap <C-l> <C-o>l
 
+" Centering search result
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
+
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>rv :so $MYVIMRC<CR>

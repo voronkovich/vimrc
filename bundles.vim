@@ -22,8 +22,10 @@ Bundle 'phpfolding.vim'
 Bundle 'voronkovich/vim-php-namespace'
 Bundle 'voronkovich/vim-phpdoc'
 Bundle 'docteurklein/php-getter-setter.vim'
-Bundle 'docteurklein/vim-symfony'
+" Conflicts with eclim http://eclim.org
+" Bundle 'docteurklein/vim-symfony'
 Bundle 'joonty/vim-phpunitqf.git'
+Bundle 'evidens/vim-twig'
 
 " Snipmate and its dependencies
 Bundle 'MarcWeber/vim-addon-mw-utils'
