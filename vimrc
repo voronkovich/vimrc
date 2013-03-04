@@ -16,8 +16,11 @@ imap <C-k> <C-o>k
 imap <C-l> <C-o>l
 
 " Code autocompletion with eclim
-inoremap <C-space> <C-x><C-u>
-imap <C-@> <C-Space>
+if has("gui_running")
+    inoremap <C-Space> <C-x><C-u>
+else
+    inoremap <Nul> <C-x><C-u>
+endif
 
 " Centering search result
 nmap n nzz
