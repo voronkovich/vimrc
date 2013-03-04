@@ -35,19 +35,49 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>rv :so $MYVIMRC<CR>
 
 nmap <BS> :NERDTreeToggle<CR>
-nmap <Leader>b :BufExplorer<CR>
+
+au FileType php nnoremap gD :PhpSearchContext<CR>
+
+" Working with buffers
+nmap <Leader>bl :BufExplorer<CR>
 nmap <Leader>bd :bd<CR>
+nmap <Leader>bj :bn<CR>
+nmap <Leader>bk :bp<CR>
+nmap <C-h> <C-^>
+
+" Saving by Ctrl+s
 map <C-S> <ESC>:w<CR> " Add: alias vim="stty stop '' -ixoff ; vim" in your bash aliases
-imap <C-S> <ESC>:w<CR>
+imap <C-s> <esc>:w<CR>
 
 " File templates
 autocmd! BufNewFile * silent! 0r ~/.vim/vimrc/templates/template.%:e
 
 " PHPDoc
-au FileType php inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
-au FileType php nnoremap <C-P> :call PhpDocSingle()<CR>
-au FileType php vnoremap <C-P> :call PhpDocRange()<CR>
-au FileType php nnoremap gD :call PhpOpenClassFileUnderCursor()<CR>
+let g:pdv_cfg_Author = "Oleg Voronkovich <oleg-voronkovich@yandex.ru>"
+let g:pdv_cfg_License = "GNU LGPL 3 or above"
+let g:pdv_cfg_Copyright = strftime("%Y")." by Oleg Voronkovich <oleg-voronkovich@yandex.ru>"
+
+au FileType php inoremap <Leader>pd <ESC>:call PhpDocSingle()<CR>i
+au FileType php nnoremap <Leader>pd :call PhpDocSingle()<CR>
+au FileType php vnoremap <Leader>pd :call PhpDocRange()<CR>
+
+" PHPUnit
+au FileType php nnoremap <Leader>ta :Test<CR>
+au FileType php nnoremap <Leader>tt :Test %<CR>
+
+" PHP getset plugin
+let g:phpgetset_getterTemplate =
+            \ "    \n" .
+            \ "    public function %funcname%()\n" .
+            \ "    {\n" .
+            \ "        return $this->%varname%;\n" .
+            \ "    }"
+let g:phpgetset_setterTemplate =
+            \ "    \n" .
+            \ "    public function %funcname%($%varname%)\n" .
+            \ "    {\n" .
+            \ "        $this->%varname% = $%varname%;\n" .
+            \ "    }"
 
 colo wombat
 

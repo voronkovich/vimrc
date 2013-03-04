@@ -21,7 +21,7 @@ Bundle 'jeffreyiacono/vim-colors-wombat'
 Bundle 'phpfolding.vim'
 Bundle 'voronkovich/vim-php-namespace'
 Bundle 'voronkovich/vim-phpdoc'
-Bundle 'docteurklein/php-getter-setter.vim'
+Bundle 'voronkovich/php-getter-setter.vim'
 " Conflicts with eclim http://eclim.org
 " Bundle 'docteurklein/vim-symfony'
 Bundle 'joonty/vim-phpunitqf.git'
