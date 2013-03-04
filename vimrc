@@ -15,6 +15,10 @@ imap <C-j> <C-o>j
 imap <C-k> <C-o>k
 imap <C-l> <C-o>l
 
+" Code autocompletion with eclim
+inoremap <C-space> <C-x><C-u>
+imap <C-@> <C-Space>
+
 " Centering search result
 nmap n nzz
 nmap N Nzz
