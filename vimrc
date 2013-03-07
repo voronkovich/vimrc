@@ -1,5 +1,51 @@
-source ~/.vim/vimrc/bundles.vim
+" Bundles {{{
+
+" Vundle
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Common
+Bundle 'gmarik/vundle'
+Bundle 'scrooloose/nerdtree'
+Bundle 'thisivan/vim-bufexplorer'
+Bundle 'kien/ctrlp.vim'
+Bundle 'voronkovich/vim-snippets'
+Bundle 'MarcWeber/vim-addon-local-vimrc'
+Bundle 'Lokaltog/vim-easymotion'
+
+" Colorschemes
+Bundle 'jeffreyiacono/vim-colors-wombat'
+
+" PHP
+Bundle 'voronkovich/phpfolding.vim'
+Bundle 'voronkovich/vim-php-namespace'
+Bundle 'voronkovich/vim-phpdoc'
+Bundle 'voronkovich/php-getter-setter.vim'
+" Conflicts with eclim http://eclim.org
+" Bundle 'docteurklein/vim-symfony'
+Bundle 'joonty/vim-phpunitqf.git'
+Bundle 'evidens/vim-twig'
+
+" Snipmate and its dependencies
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'honza/snipmate-snippets'
+Bundle 'garbas/vim-snipmate'
+
+" CVS
+Bundle 'tpope/vim-fugitive'
+
+" Pathogen
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
+" }}}
+
 filetype plugin indent on
+
+let mapleader = ","
 
 " Disable <Arrow keys>
 inoremap <Up> <NOP>
@@ -14,6 +60,8 @@ imap <C-h> <C-o>h
 imap <C-j> <C-o>j
 imap <C-k> <C-o>k
 imap <C-l> <C-o>l
+
+nmap \ :! " Launch foreign program
 
 " Code autocompletion with eclim
 if has("gui_running")
@@ -34,20 +82,21 @@ nmap g# g#zz
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>rv :so $MYVIMRC<CR>
 
+" NERDTree
 nmap <BS> :NERDTreeToggle<CR>
 
 au FileType php nnoremap gD :PhpSearchContext<CR>
 
 " Working with buffers
-nmap <Leader>bl :BufExplorer<CR>
+nmap <Leader>ls :BufExplorer<CR>
 nmap <Leader>bd :bd<CR>
 nmap <Leader>bj :bn<CR>
 nmap <Leader>bk :bp<CR>
-nmap <C-h> <C-^>
+nmap <C-h> <C-^> " Toggle between two buffers
 
 " Saving by Ctrl+s
-map <C-S> <ESC>:w<CR> " Add: alias vim="stty stop '' -ixoff ; vim" in your bash aliases
-imap <C-s> <esc>:w<CR>
+map <C-S> <Esc>:w<CR> " Add: alias vim="stty stop '' -ixoff ; vim" in your bash aliases
+imap <C-s> <Esc>:w<CR>
 
 " File templates
 autocmd! BufNewFile * silent! 0r ~/.vim/vimrc/templates/template.%:e
@@ -61,9 +110,15 @@ au FileType php inoremap <Leader>pd <ESC>:call PhpDocSingle()<CR>i
 au FileType php nnoremap <Leader>pd :call PhpDocSingle()<CR>
 au FileType php vnoremap <Leader>pd :call PhpDocRange()<CR>
 
+" Git 
+nmap <Leader>gc :Git 
+nmap <Leader>gs :Gstatus<CR>
+nmap <Leader>gb :Gblame<CR>
+
 " PHPUnit
+au FileType php nnoremap <Leader>tc :Test 
 au FileType php nnoremap <Leader>ta :Test<CR>
-au FileType php nnoremap <Leader>tt :Test %<CR>
+au FileType php nnoremap <Leader>tf :Test %<CR>
 
 " PHP getset plugin
 let g:phpgetset_getterTemplate =
@@ -88,59 +143,4 @@ set expandtab
 set smartindent
 
 set number
-
-function! PhpGetClassUnderCursor()
-    let cursor = getpos(".")
-    let cursorPosition = cursor[2]
-    let line = getline(".")
-
-    let className = ""
-    let begin = cursorPosition
-    let end = cursorPosition
-
-    let allowedChars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_'
-
-    while begin > 0 && stridx(allowedChars, line[begin]) >= 0
-        let begin = begin - 1
-    endwhile
-
-    let stringLength = strlen(line)
-    while end <= stringLength && stridx(allowedChars, line[end]) >= 0
-        let end = end + 1
-    endwhile
-
-    return strpart(line, begin + 1, end - begin - 1)
-endfunction
-
-function! PhpGetFullQualifiedClassName(class)
-    if (stridx(a:class, '\') != 0)
-        let fullQualifiedClassName = PhpFindMatchingUse(a:class)
-        if (fullQualifiedClassName is 0)
-            let currentNamespace = PhpFindCurrentNamespace()
-
-            if (currentNamespace is 0)
-                let fullQualifiedClassName = a:class
-            else
-                let fullQualifiedClassName = currentNamespace.'\'.a:class
-            endif
-        endif
-    else
-        let fullQualifiedClassName = a:class
-    endif
-
-    return fullQualifiedClassName
-endfunction
-
-function! PhpOpenClassFileUnderCursor()
-    if (exists('g:phpClassFinder') && executable(g:phpClassFinder))
-        let phpClass = PhpGetClassUnderCursor()
-
-        let fullQualifiedClassName = PhpGetFullQualifiedClassName(phpClass)
-
-        let file = system(g:phpClassFinder.' '.shellescape(fullQualifiedClassName))
-
-        if file isnot ''
-            exec 'edit' file
-        endif
-    endif
-endfunction
+" vim: foldmethod=marker
