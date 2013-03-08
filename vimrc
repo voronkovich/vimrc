@@ -19,7 +19,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'jeffreyiacono/vim-colors-wombat'
 
 " PHP
-Bundle 'voronkovich/phpfolding.vim'
+Bundle 'phpfolding.vim'
 Bundle 'voronkovich/vim-php-namespace'
 Bundle 'voronkovich/vim-phpdoc'
 Bundle 'voronkovich/php-getter-setter.vim'
@@ -61,7 +61,7 @@ imap <C-j> <C-o>j
 imap <C-k> <C-o>k
 imap <C-l> <C-o>l
 
-nmap \ :! " Launch foreign program
+nmap \ :!
 
 " Code autocompletion with eclim
 if has("gui_running")
@@ -119,6 +119,13 @@ nmap <Leader>gb :Gblame<CR>
 au FileType php nnoremap <Leader>tc :Test 
 au FileType php nnoremap <Leader>ta :Test<CR>
 au FileType php nnoremap <Leader>tf :Test %<CR>
+
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['php'] = 'php,html,javascript'
+
+au BufLeave *Test.php let g:snipMate.scope_aliases['php'] = substitute(g:snipMate.scope_aliases['php'], ',phpunit', '', '') 
+au BufEnter *Test.php let g:snipMate.scope_aliases['php'] .= ',phpunit'
 
 " PHP getset plugin
 let g:phpgetset_getterTemplate =

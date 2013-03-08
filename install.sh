@@ -21,4 +21,5 @@ rm -rf *;
 # Install Vundle
 git clone https://github.com/gmarik/vundle.git;
 
-vim -u "$VIMDIR/vimrc/bundles.vim" +BundleInstall +qall;
+# vim -u "$VIMDIR/vimrc/bundles.vim" +BundleInstall +qall;
+vim +BundleInstall +qall;
