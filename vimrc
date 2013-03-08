@@ -22,6 +22,7 @@ Bundle 'jeffreyiacono/vim-colors-wombat'
 Bundle 'phpfolding.vim'
 Bundle 'voronkovich/vim-php-namespace'
 Bundle 'voronkovich/vim-phpdoc'
+Bundle 'voronkovich/vim-phpunit-snippets'
 Bundle 'voronkovich/php-getter-setter.vim'
 " Conflicts with eclim http://eclim.org
 " Bundle 'docteurklein/vim-symfony'
@@ -126,6 +127,10 @@ let g:snipMate.scope_aliases['php'] = 'php,html,javascript'
 
 au BufLeave *Test.php let g:snipMate.scope_aliases['php'] = substitute(g:snipMate.scope_aliases['php'], ',phpunit', '', '') 
 au BufEnter *Test.php let g:snipMate.scope_aliases['php'] .= ',phpunit'
+
+" Easy motion
+nmap <Leader>w <Leader><Leader>w
+nmap <Leader>b <Leader><Leader>b
 
 " PHP getset plugin
 let g:phpgetset_getterTemplate =
