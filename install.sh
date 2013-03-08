@@ -12,9 +12,6 @@ fi;
 
 ln -s $VIMDIR/vimrc/vimrc $HOME/.vimrc
 
-# Install pathogen
-curl -Sso autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim;
-
 cd bundle;
 rm -rf *;
 
