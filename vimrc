@@ -14,6 +14,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'voronkovich/vim-snippets'
 Bundle 'MarcWeber/vim-addon-local-vimrc'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'mileszs/ack.vim'
+Bundle 'Lokaltog/vim-powerline'
 
 " Colorschemes
 Bundle 'jeffreyiacono/vim-colors-wombat'
@@ -37,11 +39,6 @@ Bundle 'garbas/vim-snipmate'
 
 " CVS
 Bundle 'tpope/vim-fugitive'
-
-" Pathogen
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
-call pathogen#infect()
 " }}}
 
 filetype plugin indent on
