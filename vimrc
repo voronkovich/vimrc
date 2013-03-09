@@ -15,7 +15,6 @@ Bundle 'voronkovich/vim-snippets'
 Bundle 'MarcWeber/vim-addon-local-vimrc'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'mileszs/ack.vim'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'Townk/vim-autoclose'
 
 " Colorschemes
@@ -55,10 +54,15 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 imap <C-h> <C-o>h
+imap <C-h> <C-o>h
 imap <C-j> <C-o>j
 imap <C-k> <C-o>k
 imap <C-l> <C-o>l
 
+" By default <Space> is equal 'l'
+nmap <Space> h
+
+" Run foreign command
 nmap \ :!
 
 " Code autocompletion with eclim
