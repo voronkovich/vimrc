@@ -16,13 +16,13 @@ Bundle 'MarcWeber/vim-addon-local-vimrc'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'mileszs/ack.vim'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'Townk/vim-autoclose'
 
 " Colorschemes
 Bundle 'jeffreyiacono/vim-colors-wombat'
 
 " PHP
 Bundle 'phpfolding.vim'
-Bundle 'voronkovich/vim-php-namespace'
 Bundle 'voronkovich/vim-phpdoc'
 Bundle 'voronkovich/vim-phpunit-snippets'
 Bundle 'voronkovich/php-getter-setter.vim'
