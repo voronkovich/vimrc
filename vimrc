@@ -16,6 +16,7 @@ Bundle 'MarcWeber/vim-addon-local-vimrc'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'mileszs/ack.vim'
 Bundle 'Townk/vim-autoclose'
+Bundle 'tpope/vim-surround'
 
 " Colorschemes
 Bundle 'jeffreyiacono/vim-colors-wombat'
