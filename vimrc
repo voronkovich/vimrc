@@ -65,6 +65,15 @@ nmap <Space> h
 
 " Run foreign command
 nmap \ :!
+" http://powdahound.com/2009/05/execute-current-file-in-vim
+function! RunShebang()
+    if (match(getline(1), '^\#!') == 0)
+        :!./%
+    else
+        echo "No shebang in this file."
+    endif
+endfunction
+nmap <leader>ru :call RunShebang()<CR>
 
 " Code autocompletion with eclim
 if has("gui_running")
@@ -87,6 +96,7 @@ nmap <silent> <leader>rv :so $MYVIMRC<CR>
 
 " NERDTree
 nmap <BS> :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen = 1
 
 au FileType php nnoremap gD :PhpSearchContext<CR>
 
