@@ -14,6 +14,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'voronkovich/vim-snippets'
 Bundle 'MarcWeber/vim-addon-local-vimrc'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/powerline'
 Bundle 'mileszs/ack.vim'
 Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-surround'
@@ -30,6 +31,9 @@ Bundle 'voronkovich/php-getter-setter.vim'
 " Bundle 'docteurklein/vim-symfony'
 Bundle 'joonty/vim-phpunitqf.git'
 Bundle 'evidens/vim-twig'
+
+" Html
+Bundle 'mattn/zencoding-vim'
 
 " Snipmate and its dependencies
 Bundle 'MarcWeber/vim-addon-mw-utils'
@@ -61,6 +65,11 @@ imap <C-l> <C-o>l
 
 " By default <Space> is equal 'l'
 nmap <Space> h
+
+" Powerline
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+let g:Powerline_symbols = 'fancy'
+set laststatus=2
 
 " Run foreign command
 nmap \ :!
