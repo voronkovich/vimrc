@@ -1,6 +1,8 @@
-#!/bin/bash
-VIMDIR="$HOME/.vim"
-cd $VIMDIR;
+#!/usr/bin/env bash
+
+SCRIPT_DIRECTORY=$(dirname $(readlink -f $0))
+
+cd $SCRIPT_DIRECTORY/..
 
 if [ ! -d "autoload"  ]; then
     mkdir "autoload"
@@ -10,7 +12,7 @@ if [ ! -d "bundle"  ]; then
     mkdir "bundle"
 fi;
 
-ln -s $VIMDIR/vimrc/vimrc $HOME/.vimrc
+ln -s $SCRIPT_DIRECTORY/vimrc $HOME/.vimrc
 
 cd bundle;
 rm -rf *;
@@ -18,5 +20,4 @@ rm -rf *;
 # Install Vundle
 git clone https://github.com/gmarik/vundle.git;
 
-# vim -u "$VIMDIR/vimrc/bundles.vim" +BundleInstall +qall;
 vim +BundleInstall +qall;
