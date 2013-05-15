@@ -106,14 +106,18 @@ nmap <silent> <leader>rv :so $MYVIMRC<CR>
 nmap <BS> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
 
+" Go to definition
 au FileType php nnoremap gD :PhpSearchContext<CR>
 
 " Working with buffers
-nmap <Leader>ls :BufExplorer<CR>
-nmap <Leader>bd :bd<CR>
+nmap <Leader>l :BufExplorer<CR>
+nmap <Leaderbd :bd<CR>
 nmap <Leader>bj :bn<CR>
 nmap <Leader>bk :bp<CR>
 nmap <C-h> <C-^> " Toggle between two buffers
+
+" Ack
+nmap <Leader>a :Ack 
 
 " Saving by Ctrl+s
 map <C-S> <Esc>:w<CR> " Add: alias vim="stty stop '' -ixoff ; vim" in your bash aliases
@@ -148,9 +152,11 @@ let g:snipMate.scope_aliases['php'] = 'php,html,javascript'
 au BufLeave *Test.php let g:snipMate.scope_aliases['php'] = substitute(g:snipMate.scope_aliases['php'], ',phpunit', '', '') 
 au BufEnter *Test.php let g:snipMate.scope_aliases['php'] .= ',phpunit'
 
+" CtrlP
+let g:ctrlp_by_filename = 1
+
 " Easy motion
-nmap <Leader>w <Leader><Leader>w
-nmap <Leader>b <Leader><Leader>b
+let g:EasyMotion_leader_key = '<Leader>'
 
 " PHP getset plugin
 let g:phpgetset_getterTemplate =
