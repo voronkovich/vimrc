@@ -38,7 +38,7 @@ Bundle 'mattn/zencoding-vim'
 " Snipmate and its dependencies
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
-Bundle 'honza/snipmate-snippets'
+Bundle 'honza/vim-snippets'
 Bundle 'garbas/vim-snipmate'
 
 " CVS
@@ -89,6 +89,15 @@ if has("gui_running")
 else
     inoremap <Nul> <C-x><C-u>
 endif
+
+" Substitute
+nnoremap <leader>s :%s//<left>
+function! Replace()
+    let s:word = input("Replace " . expand('<cword>') . " with: ")
+    :exe '%s/\<' . expand('<cword>') . '\>/' .  s:word . '/gce'
+    :unlet! s:word
+endfunction
+nnoremap <leader>r :call Replace()<CR>
 
 " Centering search result
 nmap n nzz
