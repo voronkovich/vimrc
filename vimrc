@@ -115,7 +115,7 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>rv :so $MYVIMRC<CR>
 
 " Ultisnips
-let g:UltiSnipsSnippetDirectories=["snippets"]
+let g:UltiSnipsSnippetDirectories=["snippets", "UltiSnips"]
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
@@ -162,13 +162,6 @@ nmap <Leader>gb :Gblame<CR>
 au FileType php nnoremap <Leader>tc :Test 
 au FileType php nnoremap <Leader>ta :Test<CR>
 au FileType php nnoremap <Leader>tf :Test %<CR>
-
-let g:snipMate = {}
-let g:snipMate.scope_aliases = {}
-let g:snipMate.scope_aliases['php'] = 'php,html,javascript'
-
-au BufLeave *Test.php let g:snipMate.scope_aliases['php'] = substitute(g:snipMate.scope_aliases['php'], ',phpunit', '', '') 
-au BufEnter *Test.php let g:snipMate.scope_aliases['php'] .= ',phpunit'
 
 " CtrlP
 let g:ctrlp_by_filename = 1
