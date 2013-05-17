@@ -22,6 +22,12 @@ Bundle 'tpope/vim-surround'
 " Colorschemes
 Bundle 'jeffreyiacono/vim-colors-wombat'
 
+" Code complition
+" Bundle 'Valloric/YouCompleteMe'
+
+" Snippets
+Bundle 'SirVer/ultisnips'
+
 " PHP
 Bundle 'phpfolding.vim'
 Bundle 'voronkovich/vim-phpdoc'
@@ -36,10 +42,10 @@ Bundle 'evidens/vim-twig'
 Bundle 'mattn/zencoding-vim'
 
 " Snipmate and its dependencies
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'honza/vim-snippets'
-Bundle 'garbas/vim-snipmate'
+" Bundle 'MarcWeber/vim-addon-mw-utils'
+" Bundle 'tomtom/tlib_vim'
+" Bundle 'honza/vim-snippets'
+" Bundle 'garbas/vim-snipmate'
 
 " CVS
 Bundle 'tpope/vim-fugitive'
@@ -110,6 +116,12 @@ nmap g# g#zz
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>rv :so $MYVIMRC<CR>
+
+" Ultisnips
+let g:UltiSnipsSnippetDirectories=["snippets"]
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " NERDTree
 nmap <BS> :NERDTreeToggle<CR>
