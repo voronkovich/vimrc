@@ -41,11 +41,8 @@ Bundle 'evidens/vim-twig'
 " Html
 Bundle 'mattn/zencoding-vim'
 
-" Snipmate and its dependencies
-" Bundle 'MarcWeber/vim-addon-mw-utils'
-" Bundle 'tomtom/tlib_vim'
-" Bundle 'honza/vim-snippets'
-" Bundle 'garbas/vim-snipmate'
+" ZSH highlighting
+Bundle 'clones/vim-zsh'
 
 " CVS
 Bundle 'tpope/vim-fugitive'
