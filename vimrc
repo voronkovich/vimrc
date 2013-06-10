@@ -41,6 +41,8 @@ Bundle 'evidens/vim-twig'
 " Html
 Bundle 'mattn/zencoding-vim'
 
+" MODX
+Bundle 'rosstimson/modx.vim'
 " ZSH highlighting
 Bundle 'clones/vim-zsh'
 
@@ -68,6 +70,9 @@ imap <C-l> <C-o>l
 
 " By default <Space> is equal 'l'
 nmap <Space> h
+
+" Write file with root permissions
+command Sw w !sudo tee %
 
 " Powerline
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
@@ -129,7 +134,7 @@ au FileType php nnoremap gD :PhpSearchContext<CR>
 
 " Working with buffers
 nmap <Leader>l :BufExplorer<CR>
-nmap <Leaderbd :bd<CR>
+nmap <Leader>d :bd<CR>
 nmap <Leader>bj :bn<CR>
 nmap <Leader>bk :bp<CR>
 nmap <C-h> <C-^> " Toggle between two buffers
