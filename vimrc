@@ -43,8 +43,12 @@ Bundle 'mattn/zencoding-vim'
 
 " MODX
 Bundle 'rosstimson/modx.vim'
+
 " ZSH highlighting
 Bundle 'clones/vim-zsh'
+
+" Puppet
+Bundle 'rodjek/vim-puppet'
 
 " CVS
 Bundle 'tpope/vim-fugitive'
