@@ -39,7 +39,7 @@ Bundle 'joonty/vim-phpunitqf.git'
 Bundle 'evidens/vim-twig'
 
 " Html
-Bundle 'mattn/zencoding-vim'
+Bundle 'mattn/emmet-vim'
 
 " MODX
 Bundle 'rosstimson/modx.vim'
@@ -53,11 +53,7 @@ Bundle 'rodjek/vim-puppet'
 " CVS
 Bundle 'tpope/vim-fugitive'
 
-" Nettuts fetch port
-Bundle 'mklabs/vim-fetch'
-
-" Backbone snippets
-Bundle 'mklabs/vim-backbone'
+Bundle 'tacahiroy/ctrlp-funky'
 " }}}
 
 filetype plugin indent on
@@ -180,6 +176,7 @@ au FileType php nnoremap <Leader>tf :Test %<CR>
 
 " CtrlP
 let g:ctrlp_by_filename = 1
+let g:ctrlp_extensions = ['funky']
 
 " Easy motion
 let g:EasyMotion_leader_key = '<Leader>'
