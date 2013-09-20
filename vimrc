@@ -52,6 +52,12 @@ Bundle 'rodjek/vim-puppet'
 
 " CVS
 Bundle 'tpope/vim-fugitive'
+
+" Nettuts fetch port
+Bundle 'mklabs/vim-fetch'
+
+" Backbone snippets
+Bundle 'mklabs/vim-backbone'
 " }}}
 
 filetype plugin indent on
@@ -76,7 +82,7 @@ imap <C-l> <C-o>l
 nmap <Space> h
 
 " Write file with root permissions
-command Sw w !sudo tee %
+command! Sw w !sudo tee %
 
 " Powerline
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
