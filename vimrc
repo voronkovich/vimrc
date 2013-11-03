@@ -12,9 +12,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'thisivan/vim-bufexplorer'
 Bundle 'kien/ctrlp.vim'
 Bundle 'voronkovich/vim-snippets'
-Bundle 'MarcWeber/vim-addon-local-vimrc'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Lokaltog/powerline'
+Bundle 'bling/vim-airline'
 Bundle 'mileszs/ack.vim'
 Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-surround'
@@ -23,13 +22,13 @@ Bundle 'tpope/vim-surround'
 Bundle 'jeffreyiacono/vim-colors-wombat'
 
 " Code complition
-" Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
 
 " Snippets
 Bundle 'SirVer/ultisnips'
 
 " PHP
-Bundle 'phpfolding.vim'
+" Bundle 'phpfolding.vim'
 Bundle 'voronkovich/vim-phpdoc'
 Bundle 'voronkovich/vim-phpunit-snippets'
 Bundle 'voronkovich/php-getter-setter.vim'
@@ -40,9 +39,6 @@ Bundle 'evidens/vim-twig'
 
 " Html
 Bundle 'mattn/emmet-vim'
-
-" MODX
-Bundle 'rosstimson/modx.vim'
 
 " ZSH highlighting
 Bundle 'clones/vim-zsh'
