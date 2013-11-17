@@ -17,6 +17,7 @@ Bundle 'bling/vim-airline'
 Bundle 'mileszs/ack.vim'
 Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-surround'
+Bundle 'ervandew/screen'
 
 " Colorschemes
 Bundle 'jeffreyiacono/vim-colors-wombat'
