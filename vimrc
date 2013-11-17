@@ -99,6 +99,7 @@ if has("gui_running")
 else
     inoremap <Nul> <C-x><C-u>
 endif
+let g:EclimCompletionMethod = 'omnifunc'
 
 " Substitute
 nnoremap <leader>s :%s//<left>
