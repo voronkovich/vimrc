@@ -29,7 +29,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
 
 " PHP
-" Bundle 'phpfolding.vim'
+Bundle 'rayburgemeestre/phpfolding.vim'
 Bundle 'voronkovich/vim-phpdoc'
 Bundle 'voronkovich/vim-phpunit-snippets'
 Bundle 'voronkovich/php-getter-setter.vim'
@@ -76,11 +76,6 @@ nmap <Space> h
 
 " Write file with root permissions
 command! Sw w !sudo tee %
-
-" Powerline
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-let g:Powerline_symbols = 'fancy'
-set laststatus=2
 
 " Run foreign command
 nmap \ :!
@@ -192,6 +187,9 @@ let g:phpgetset_setterTemplate =
             \ "    {\n" .
             \ "        $this->%varname% = $%varname%;\n" .
             \ "    }"
+
+" PHP folding
+let php_folding=0
 
 colo wombat
 
