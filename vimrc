@@ -96,7 +96,7 @@ else
     inoremap <Nul> <C-x><C-u>
 endif
 "let g:EclimCompletionMethod = 'omnifunc'
-au FileType php noremap <silent> <buffer> <cr> :PhpSearchContext<cr>
+au FileType php noremap <silent> <buffer> \ :PhpSearchContext<cr>
 
 " Substitute
 nnoremap <leader>s :%s//<left>
@@ -170,7 +170,7 @@ let g:ctrlp_by_filename = 1
 let g:ctrlp_extensions = ['funky']
 
 " Easy motion
-let g:EasyMotion_leader_key = '\'
+let g:EasyMotion_leader_key = '<CR>'
 
 " PHP getset plugin
 let g:phpgetset_getterTemplate =
