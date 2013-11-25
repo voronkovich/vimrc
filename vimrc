@@ -23,7 +23,7 @@ Bundle 'ervandew/screen'
 Bundle 'jeffreyiacono/vim-colors-wombat'
 
 " Code complition
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 
 " Snippets
 Bundle 'SirVer/ultisnips'
@@ -78,7 +78,7 @@ nmap <Space> h
 command! Sw w !sudo tee %
 
 " Run foreign command
-nmap \ :!
+" nmap \ :!
 " http://powdahound.com/2009/05/execute-current-file-in-vim
 function! RunShebang()
     if (match(getline(1), '^\#!') == 0)
@@ -95,7 +95,8 @@ if has("gui_running")
 else
     inoremap <Nul> <C-x><C-u>
 endif
-let g:EclimCompletionMethod = 'omnifunc'
+"let g:EclimCompletionMethod = 'omnifunc'
+au FileType php noremap <silent> <buffer> <cr> :PhpSearchContext<cr>
 
 " Substitute
 nnoremap <leader>s :%s//<left>
@@ -127,9 +128,6 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " NERDTree
 nmap <BS> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
-
-" Go to definition
-au FileType php nnoremap gD :PhpSearchContext<CR>
 
 " Working with buffers
 nmap <Leader>l :BufExplorer<CR>
@@ -172,7 +170,7 @@ let g:ctrlp_by_filename = 1
 let g:ctrlp_extensions = ['funky']
 
 " Easy motion
-let g:EasyMotion_leader_key = '<Leader>'
+let g:EasyMotion_leader_key = '\'
 
 " PHP getset plugin
 let g:phpgetset_getterTemplate =
