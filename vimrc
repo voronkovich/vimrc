@@ -97,6 +97,8 @@ else
 endif
 "let g:EclimCompletionMethod = 'omnifunc'
 au FileType php noremap <silent> <buffer> \ :PhpSearchContext<cr>
+nmap <Leader>pc :ProjectCreate 
+nmap <Leader>pl :ProjectList<CR>
 
 " Substitute
 nnoremap <leader>s :%s//<left>
@@ -188,6 +190,9 @@ let g:phpgetset_setterTemplate =
 
 " PHP folding
 let php_folding=0
+
+" PHP
+au FileType php inoremap .. ->
 
 colo wombat
 
