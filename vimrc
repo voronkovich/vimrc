@@ -170,7 +170,7 @@ let g:ctrlp_by_filename = 1
 let g:ctrlp_extensions = ['funky']
 
 " Easy motion
-let g:EasyMotion_leader_key = '<CR>'
+let g:EasyMotion_leader_key = ';'
 
 " PHP getset plugin
 let g:phpgetset_getterTemplate =
