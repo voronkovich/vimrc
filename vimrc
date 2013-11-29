@@ -1,6 +1,4 @@
-" Bundles {{{
-
-" Vundle
+" Bundles {{{ " Vundle
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -20,7 +18,12 @@ Bundle 'tpope/vim-surround'
 Bundle 'ervandew/screen'
 
 " Colorschemes
+Bundle 'vim-scripts/wombat256.vim'
 Bundle 'jeffreyiacono/vim-colors-wombat'
+Bundle 'flazz/vim-colorschemes'
+
+" Comments
+Bundle 'tpope/vim-commentary'
 
 " Code complition
 "Bundle 'Valloric/YouCompleteMe'
@@ -194,7 +197,7 @@ let php_folding=0
 " PHP
 au FileType php inoremap .. ->
 
-colo wombat
+colo wombat256
 
 set tabstop=4
 set shiftwidth=4
