@@ -41,6 +41,9 @@ Bundle 'voronkovich/php-getter-setter.vim'
 Bundle 'joonty/vim-phpunitqf.git'
 Bundle 'evidens/vim-twig'
 
+" JavaScript
+Bundle 'marijnh/tern_for_vim'
+
 " Html
 Bundle 'mattn/emmet-vim'
 
@@ -59,6 +62,8 @@ Bundle 'tacahiroy/ctrlp-funky'
 filetype plugin indent on
 
 let mapleader = ","
+
+nnoremap ; :
 
 " Disable <Arrow keys>
 inoremap <Up> <NOP>
@@ -175,7 +180,7 @@ let g:ctrlp_by_filename = 1
 let g:ctrlp_extensions = ['funky']
 
 " Easy motion
-let g:EasyMotion_leader_key = ';'
+let g:EasyMotion_leader_key = '<Space>'
 
 " PHP getset plugin
 let g:phpgetset_getterTemplate =
