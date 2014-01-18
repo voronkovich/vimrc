@@ -50,6 +50,9 @@ Bundle 'mattn/emmet-vim'
 " ZSH highlighting
 Bundle 'clones/vim-zsh'
 
+" Fish
+Bundle 'dag/vim-fish'
+
 " Puppet
 Bundle 'rodjek/vim-puppet'
 
