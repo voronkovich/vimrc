@@ -9,7 +9,6 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'thisivan/vim-bufexplorer'
 Bundle 'kien/ctrlp.vim'
-Bundle 'voronkovich/vim-snippets'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'bling/vim-airline'
 Bundle 'mileszs/ack.vim'
@@ -30,6 +29,8 @@ Bundle 'tpope/vim-commentary'
 
 " Snippets
 Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
+Bundle 'voronkovich/my-vim-snippets'
 
 " PHP
 Bundle 'rayburgemeestre/phpfolding.vim'
@@ -133,7 +134,7 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>rv :so $MYVIMRC<CR>
 
 " Ultisnips
-let g:UltiSnipsSnippetDirectories=["snippets", "UltiSnips"]
+let g:UltiSnipsSnippetDirectories=["my-snippets"]
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
