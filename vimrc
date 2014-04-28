@@ -87,7 +87,7 @@ imap <C-l> <C-o>l
 nmap <Space> h
 
 " Write file with root permissions
-command! Sw w !sudo tee %
+command! W w !sudo tee %
 
 " Run foreign command
 " nmap \ :!
