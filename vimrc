@@ -16,6 +16,7 @@ Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-surround'
 Bundle 'ervandew/screen'
 Bundle 'embear/vim-localvimrc'
+Bundle 'ervandew/supertab'
 
 " Colorschemes
 Bundle 'vim-scripts/wombat256.vim'
