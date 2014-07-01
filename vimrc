@@ -206,7 +206,10 @@ let g:phpgetset_setterTemplate =
 let php_folding=0
 
 " PHP
-au FileType php inoremap .. ->
+au FileType php inoremap ,, ->
+au FileType php inoremap ,t $this->
+au FileType php inoremap ,< <?php 
+au FileType php inoremap ,> <?php  ?><Esc>hhha
 
 colo wombat256
 
