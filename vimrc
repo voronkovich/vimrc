@@ -7,7 +7,7 @@ call vundle#rc()
 " Common
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
-Bundle 'thisivan/vim-bufexplorer'
+" Bundle 'thisivan/vim-bufexplorer'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'bling/vim-airline'
@@ -154,7 +154,7 @@ nmap <BS> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
 
 " Working with buffers
-nmap <Leader>l :BufExplorer<CR>
+nmap <Leader>l :CtrlPBuffer<CR>
 nmap <Leader>d :bd<CR>
 nmap <Leader>bj :bn<CR>
 nmap <Leader>bk :bp<CR>
