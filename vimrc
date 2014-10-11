@@ -6,7 +6,8 @@ call vundle#rc()
 
 " Common
 Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
+Bundle 'Shougo/vimfiler.vim'
+" Bundle 'scrooloose/nerdtree'
 " Bundle 'thisivan/vim-bufexplorer'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
@@ -153,7 +154,7 @@ let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 
 " NERDTree
-nmap <BS> :NERDTreeToggle<CR>
+nmap <BS> :VimFiler<CR>
 let NERDTreeQuitOnOpen = 1
 
 " Working with buffers
