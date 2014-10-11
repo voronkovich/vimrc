@@ -16,7 +16,9 @@ Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-surround'
 Bundle 'ervandew/screen'
 Bundle 'embear/vim-localvimrc'
-Bundle 'ervandew/supertab'
+Bundle 'Shougo/vimproc'
+Bundle 'Shougo/unite.vim'
+Bundle 'tobyS/vmustache'
 
 " Colorschemes
 Bundle 'vim-scripts/wombat256.vim'
@@ -27,7 +29,7 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'tpope/vim-commentary'
 
 " Code complition
-"Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 
 " Snippets
 Bundle 'SirVer/ultisnips'
@@ -36,16 +38,21 @@ Bundle 'voronkovich/my-vim-snippets'
 
 " PHP
 Bundle 'rayburgemeestre/phpfolding.vim'
-Bundle 'voronkovich/vim-phpdoc'
+" Bundle 'voronkovich/vim-phpdoc'
+Bundle 'voronkovich/vim-composer-open-class-file'
+Bundle 'tobyS/pdv'
 Bundle 'voronkovich/vim-phpunit-snippets'
 Bundle 'voronkovich/php-getter-setter.vim'
 " Conflicts with eclim http://eclim.org
 " Bundle 'docteurklein/vim-symfony'
 Bundle 'joonty/vim-phpunitqf.git'
 Bundle 'evidens/vim-twig'
+Bundle 'm2mdas/phpcomplete-extended'
+Bundle 'm2mdas/phpcomplete-extended-symfony'
+Bundle 'arnaud-lb/vim-php-namespace'
 
 " JavaScript
-Bundle 'marijnh/tern_for_vim'
+" Bundle 'marijnh/tern_for_vim'
 
 " Html
 Bundle 'mattn/emmet-vim'
@@ -84,9 +91,6 @@ imap <C-h> <C-o>h
 imap <C-j> <C-o>j
 imap <C-k> <C-o>k
 imap <C-l> <C-o>l
-
-" By default <Space> is equal 'l'
-nmap <Space> h
 
 " Write file with root permissions
 command! W w !sudo tee %
@@ -140,6 +144,10 @@ let g:UltiSnipsSnippetDirectories=["my-snippets"]
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" YouCompleteMe
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 
 " NERDTree
 nmap <BS> :NERDTreeToggle<CR>
@@ -208,8 +216,18 @@ let php_folding=0
 " PHP
 au FileType php inoremap ,, ->
 au FileType php inoremap ,t $this->
-au FileType php inoremap ,< <?php 
+au FileType php inoremap ,r return ;<Esc>i
+au FileType php inoremap ,< <?php<CR><CR>
 au FileType php inoremap ,> <?php  ?><Esc>hhha
+
+au FileType php nnoremap gf :call ComposerOpenFileUnderCursor()<CR>
+
+" PHP documentor
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+
+" PHP Complete
+autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
+let g:phpcomplete_index_composer_command = 'composer'
 
 colo wombat256
 
