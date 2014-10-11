@@ -145,6 +145,9 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
+" Unite
+nnoremap <space>u :Unite 
+
 " YouCompleteMe
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
@@ -154,7 +157,7 @@ nmap <BS> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
 
 " Working with buffers
-nmap <Leader>l :CtrlPBuffer<CR>
+nmap <space>l :Unite -quick-match buffer<CR>
 nmap <Leader>d :bd<CR>
 nmap <Leader>bj :bn<CR>
 nmap <Leader>bk :bp<CR>
