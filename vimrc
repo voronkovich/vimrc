@@ -12,6 +12,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'FelikZ/ctrlp-py-matcher'
 Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'voronkovich/ctrlp-symfony2.vim'
+Bundle 'voronkovich/ctrlp-nerdtree.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'bling/vim-airline'
 Bundle 'mileszs/ack.vim'
@@ -198,11 +199,9 @@ au FileType php nnoremap <Leader>tc :Test
 au FileType php nnoremap <Leader>ta :Test<CR>
 au FileType php nnoremap <Leader>tf :Test %<CR>
 
-" CtrlP
+" CtrlP {{{
 let g:ctrlp_by_filename = 1
 let g:ctrlp_working_path_mode = 0
-let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-let g:ctrlp_extensions = ['funky']
 let g:ctrlp_user_command = 'ag %s -iU --nocolor --nogroup --hidden
       \ --ignore .git
       \ --ignore .svn
@@ -216,6 +215,10 @@ let g:ctrlp_user_command = 'ag %s -iU --nocolor --nogroup --hidden
       \ --ignore "./vendor/composer"
       \ --ignore "./web/bundles"
       \ -g ""'
+let g:ctrlp_extensions = ['funky', 'nerdtree']
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+nnoremap <Space><BS> :CtrlPNerdTree<CR> 
+" }}}
 
 " Easy motion
 let g:EasyMotion_leader_key = '<Space>'
