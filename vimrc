@@ -6,24 +6,27 @@ call vundle#rc()
 
 " Common
 Bundle 'gmarik/vundle'
-Bundle 'Shougo/vimfiler.vim'
-" Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdtree'
 " Bundle 'thisivan/vim-bufexplorer'
 Bundle 'kien/ctrlp.vim'
+Bundle 'FelikZ/ctrlp-py-matcher'
+Bundle 'tacahiroy/ctrlp-funky'
+Bundle 'voronkovich/ctrlp-symfony2.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'bling/vim-airline'
 Bundle 'mileszs/ack.vim'
 Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-surround'
-Bundle 'ervandew/screen'
 Bundle 'embear/vim-localvimrc'
-Bundle 'Shougo/vimproc'
-Bundle 'Shougo/unite.vim'
+" Bundle 'Shougo/vimfiler.vim'
+" Bundle 'Shougo/vimproc'
+" Bundle 'Shougo/unite.vim'
 Bundle 'tobyS/vmustache'
 
 " Colorschemes
 Bundle 'vim-scripts/wombat256.vim'
 Bundle 'jeffreyiacono/vim-colors-wombat'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'flazz/vim-colorschemes'
 
 " Comments
@@ -48,8 +51,8 @@ Bundle 'voronkovich/php-getter-setter.vim'
 " Bundle 'docteurklein/vim-symfony'
 Bundle 'joonty/vim-phpunitqf.git'
 Bundle 'evidens/vim-twig'
-Bundle 'm2mdas/phpcomplete-extended'
-Bundle 'm2mdas/phpcomplete-extended-symfony'
+" Bundle 'm2mdas/phpcomplete-extended'
+" Bundle 'm2mdas/phpcomplete-extended-symfony'
 Bundle 'arnaud-lb/vim-php-namespace'
 
 " JavaScript
@@ -70,7 +73,6 @@ Bundle 'rodjek/vim-puppet'
 " CVS
 Bundle 'tpope/vim-fugitive'
 
-Bundle 'tacahiroy/ctrlp-funky'
 " }}}
 
 filetype plugin indent on
@@ -146,6 +148,9 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
+" Airline
+set laststatus=2
+
 " Unite
 nnoremap <space>u :Unite 
 
@@ -154,7 +159,7 @@ let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 
 " NERDTree
-nmap <BS> :VimFiler<CR>
+nmap <BS> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
 
 " Working with buffers
@@ -168,8 +173,8 @@ nmap <C-h> <C-^> " Toggle between two buffers
 nmap <Leader>a :Ack 
 
 " Saving by Ctrl+s
-map <C-S> <Esc>:w<CR> " Add: alias vim="stty stop '' -ixoff ; vim" in your bash aliases
-imap <C-s> <Esc>:w<CR>
+map <C-a> <Esc>:w<CR> " Add: alias vim="stty stop '' -ixoff ; vim" in your bash aliases
+imap <C-a> <Esc>:w<CR>
 
 " File templates
 autocmd! BufNewFile * silent! 0r ~/.vim/vimrc/templates/template.%:e
@@ -195,7 +200,22 @@ au FileType php nnoremap <Leader>tf :Test %<CR>
 
 " CtrlP
 let g:ctrlp_by_filename = 1
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 let g:ctrlp_extensions = ['funky']
+let g:ctrlp_user_command = 'ag %s -iU --nocolor --nogroup --hidden
+      \ --ignore .git
+      \ --ignore .svn
+      \ --ignore .hg
+      \ --ignore .DS_Store
+      \ --ignore "**/.*.swp"
+      \ --ignore "**/*.pyc"
+      \ --ignore "./app/cache"
+      \ --ignore "./bin"
+      \ --ignore "./build"
+      \ --ignore "./vendor/composer"
+      \ --ignore "./web/bundles"
+      \ -g ""'
 
 " Easy motion
 let g:EasyMotion_leader_key = '<Space>'
@@ -233,7 +253,10 @@ let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
 let g:phpcomplete_index_composer_command = 'composer'
 
-colo wombat256
+" Colorscheme
+set t_Co=256
+set background=dark
+colo MountainDew
 
 set tabstop=4
 set shiftwidth=4
