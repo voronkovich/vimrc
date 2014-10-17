@@ -11,6 +11,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'FelikZ/ctrlp-py-matcher'
 Bundle 'tacahiroy/ctrlp-funky'
+Bundle 'sergey-vlasov/ctrlp-hibuff'
 Bundle 'voronkovich/ctrlp-symfony2.vim'
 Bundle 'voronkovich/ctrlp-nerdtree.vim'
 Bundle 'Lokaltog/vim-easymotion'
@@ -164,7 +165,7 @@ nmap <BS> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
 
 " Working with buffers
-nmap <space>l :Unite -quick-match buffer<CR>
+nmap <space>l :CtrlPHiBuff<CR>
 nmap <Leader>d :bd<CR>
 nmap <Leader>bj :bn<CR>
 nmap <Leader>bk :bp<CR>
