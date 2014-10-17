@@ -12,6 +12,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'FelikZ/ctrlp-py-matcher'
 Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'sergey-vlasov/ctrlp-hibuff'
+Bundle 'kassio/ctrlp-bufline.vim'
 Bundle 'voronkovich/ctrlp-symfony2.vim'
 Bundle 'voronkovich/ctrlp-nerdtree.vim'
 Bundle 'Lokaltog/vim-easymotion'
@@ -41,6 +42,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 Bundle 'voronkovich/my-vim-snippets'
+Bundle 'stocarul/ultisnips-symfony2'
 
 " PHP
 Bundle 'rayburgemeestre/phpfolding.vim'
@@ -223,6 +225,7 @@ endif
 let g:ctrlp_extensions = ['funky', 'nerdtree']
 " let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 nnoremap <Space><BS> :CtrlPNerdTree<CR> 
+nnoremap <Space>/ :CtrlPBufLine<CR>
 " }}}
 
 " Easy motion
