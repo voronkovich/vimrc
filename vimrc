@@ -201,22 +201,26 @@ au FileType php nnoremap <Leader>tf :Test %<CR>
 
 " CtrlP {{{
 let g:ctrlp_by_filename = 1
+let g:ctrlp_max_files = 0
+let g:ctrlp_match_window = 'max:20'
 let g:ctrlp_working_path_mode = 0
-let g:ctrlp_user_command = 'ag %s -iU --nocolor --nogroup --hidden
-      \ --ignore .git
-      \ --ignore .svn
-      \ --ignore .hg
-      \ --ignore .DS_Store
-      \ --ignore "**/.*.swp"
-      \ --ignore "**/*.pyc"
-      \ --ignore "./app/cache"
-      \ --ignore "./bin"
-      \ --ignore "./build"
-      \ --ignore "./vendor/composer"
-      \ --ignore "./web/bundles"
-      \ -g ""'
+if executable('ag')
+    let g:ctrlp_user_command = 'ag %s -iU --nocolor --nogroup --hidden
+          \ --ignore .git
+          \ --ignore .svn
+          \ --ignore .hg
+          \ --ignore .DS_Store
+          \ --ignore "**/.*.swp"
+          \ --ignore "**/*.pyc"
+          \ --ignore "./app/cache"
+          \ --ignore "./bin"
+          \ --ignore "./build"
+          \ --ignore "./vendor/composer"
+          \ --ignore "./web/bundles"
+          \ -g ""'
+endif
 let g:ctrlp_extensions = ['funky', 'nerdtree']
-let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+" let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 nnoremap <Space><BS> :CtrlPNerdTree<CR> 
 " }}}
 
