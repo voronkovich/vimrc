@@ -8,7 +8,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 " Bundle 'thisivan/vim-bufexplorer'
-Bundle 'kien/ctrlp.vim'
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'FelikZ/ctrlp-py-matcher'
 Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'sergey-vlasov/ctrlp-hibuff'
