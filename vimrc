@@ -167,7 +167,7 @@ nmap <BS> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
 
 " Working with buffers
-nmap <space>l :CtrlPHiBuff<CR>
+nmap <Leader>l :CtrlPHiBuff<CR>
 nmap <Leader>d :bd<CR>
 nmap <Leader>bj :bn<CR>
 nmap <Leader>bk :bp<CR>
@@ -226,6 +226,11 @@ let g:ctrlp_extensions = ['funky', 'nerdtree']
 " let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 nnoremap <Space><BS> :CtrlPNerdTree<CR> 
 nnoremap <Space>/ :CtrlPBufLine<CR>
+nnoremap <C-z>m :CtrlPSymfony2Entities<CR>
+nnoremap <C-z>c :CtrlPSymfony2Controllers<CR>
+nnoremap <C-z>v :CtrlPSymfony2Views<CR>
+nnoremap <C-z>a :CtrlPSymfony2Assets<CR>
+nnoremap <C-z>o :CtrlPSymfony2Configs<CR>
 " }}}
 
 " Easy motion
