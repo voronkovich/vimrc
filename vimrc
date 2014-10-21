@@ -85,6 +85,9 @@ let mapleader = ","
 
 nnoremap ; :
 
+" Jump to an end of a string
+inoremap ,; <C-o>A
+
 " Disable <Arrow keys>
 inoremap <Up> <NOP>
 inoremap <Down> <NOP>
@@ -272,7 +275,7 @@ let g:phpcomplete_index_composer_command = 'composer'
 " Colorscheme
 set t_Co=256
 set background=dark
-colo MountainDew
+colo earth
 
 set tabstop=4
 set shiftwidth=4
