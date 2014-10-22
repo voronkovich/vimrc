@@ -88,7 +88,7 @@ nnoremap ; :
 " Jump to an end of a string
 inoremap ,; <C-o>A
 
-" Disable <Arrow keys>
+" Disable <Arrow keys> {{{
 inoremap <Up> <NOP>
 inoremap <Down> <NOP>
 inoremap <Left> <NOP>
@@ -97,10 +97,11 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-imap <C-h> <C-o>h
-imap <C-j> <C-o>j
-imap <C-k> <C-o>k
-imap <C-l> <C-o>l
+inoremap <C-h> <C-o>h
+inoremap <C-j> <C-o>j
+inoremap <C-k> <C-o>k
+inoremap <C-l> <C-o>l
+" }}}
 
 " Write file with root permissions
 command! W w !sudo tee %
@@ -120,7 +121,7 @@ nnoremap <Leader>pl :ProjectList<CR>
 nnoremap <leader>s :%s//<left>
 function! Replace(string)
     let replace = input("Replace " . a:string . " with: ")
-    :exe '%s/\<' . a:string '\>/' .  replace
+    :exe '%s/\<' . a:string . '\>/' .  replace
 endfunction
 nnoremap <leader>r :call Replace(expand('<cword>'))<CR>
 nnoremap <leader>R :call Replace(expand('<cWORD>'))<CR>
@@ -252,7 +253,7 @@ au FileType php inoremap ,r return ;<Esc>i
 au FileType php inoremap ,< <?php<CR><CR>
 au FileType php inoremap ,> <?php  ?><Esc>hhha
 
-au FileType php nnoremap gf :call ComposerOpenFileUnderCursor()<CR>
+au FileType php nnoremap gf :call composer#open_file#open(expand('<cword>'))<CR>
 
 " PHP documentor
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
