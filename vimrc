@@ -105,18 +105,6 @@ imap <C-l> <C-o>l
 " Write file with root permissions
 command! W w !sudo tee %
 
-" Run foreign command
-" nmap \ :!
-" http://powdahound.com/2009/05/execute-current-file-in-vim
-function! RunShebang()
-    if (match(getline(1), '^\#!') == 0)
-        :!./%
-    else
-        echo "No shebang in this file."
-    endif
-endfunction
-nmap <leader>ru :call RunShebang()<CR>
-
 " Code autocompletion with eclim
 if has("gui_running")
     inoremap <C-Space> <C-x><C-u>
@@ -125,17 +113,18 @@ else
 endif
 "let g:EclimCompletionMethod = 'omnifunc'
 au FileType php noremap <silent> <buffer> \ :PhpSearchContext<cr>
-nmap <Leader>pc :ProjectCreate 
-nmap <Leader>pl :ProjectList<CR>
+nnoremap <Leader>pc :ProjectCreate 
+nnoremap <Leader>pl :ProjectList<CR>
 
-" Substitute
+" Substitute functions {{{
 nnoremap <leader>s :%s//<left>
-function! Replace()
-    let s:word = input("Replace " . expand('<cword>') . " with: ")
-    :exe '%s/\<' . expand('<cword>') . '\>/' .  s:word . '/gce'
-    :unlet! s:word
+function! Replace(string)
+    let replace = input("Replace " . a:string . " with: ")
+    :exe '%s/\<' . a:string '\>/' .  replace
 endfunction
-nnoremap <leader>r :call Replace()<CR>
+nnoremap <leader>r :call Replace(expand('<cword>'))<CR>
+nnoremap <leader>R :call Replace(expand('<cWORD>'))<CR>
+" }}}
 
 " Centering search result
 nmap n nzz
