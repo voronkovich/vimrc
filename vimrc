@@ -25,6 +25,7 @@ Bundle 'embear/vim-localvimrc'
 " Bundle 'Shougo/vimproc'
 " Bundle 'Shougo/unite.vim'
 Bundle 'tobyS/vmustache'
+Bundle 'Yggdroot/indentLine'
 
 " Colorschemes
 Bundle 'vim-scripts/wombat256.vim'
