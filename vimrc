@@ -86,8 +86,10 @@ let mapleader = ","
 
 nnoremap ; :
 
+nmap <C-z> <Nop>
+
 " Jump to an end of a string
-inoremap ,; <C-o>A
+inoremap ,a <C-o>A
 
 " Disable <Arrow keys> {{{
 inoremap <Up> <NOP>
