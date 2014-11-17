@@ -11,7 +11,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'FelikZ/ctrlp-py-matcher'
 Bundle 'tacahiroy/ctrlp-funky'
-Bundle 'sergey-vlasov/ctrlp-hibuff'
+" Bundle 'sergey-vlasov/ctrlp-hibuff'
 Bundle 'kassio/ctrlp-bufline.vim'
 Bundle 'voronkovich/ctrlp-symfony2.vim'
 Bundle 'voronkovich/ctrlp-nerdtree.vim'
@@ -64,6 +64,7 @@ Bundle 'arnaud-lb/vim-php-namespace'
 " Bundle 'marijnh/tern_for_vim'
 
 " Html
+Bundle 'Valloric/MatchTagAlways'
 Bundle 'mattn/emmet-vim'
 
 " ZSH highlighting
@@ -163,7 +164,7 @@ nmap <BS> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
 
 " Working with buffers
-nmap <Leader>l :CtrlPHiBuff<CR>
+nmap <Leader>l :CtrlPBuffer<CR>
 nmap <Leader>d :bd<CR>
 nmap <Leader>bj :bn<CR>
 nmap <Leader>bk :bp<CR>
