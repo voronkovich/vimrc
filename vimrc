@@ -7,11 +7,9 @@ call vundle#rc()
 " Common
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
-" Bundle 'thisivan/vim-bufexplorer'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'FelikZ/ctrlp-py-matcher'
 Bundle 'tacahiroy/ctrlp-funky'
-" Bundle 'sergey-vlasov/ctrlp-hibuff'
 Bundle 'kassio/ctrlp-bufline.vim'
 Bundle 'voronkovich/ctrlp-symfony2.vim'
 Bundle 'voronkovich/ctrlp-nerdtree.vim'
@@ -21,9 +19,6 @@ Bundle 'mileszs/ack.vim'
 Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-surround'
 Bundle 'embear/vim-localvimrc'
-" Bundle 'Shougo/vimfiler.vim'
-" Bundle 'Shougo/vimproc'
-" Bundle 'Shougo/unite.vim'
 Bundle 'tobyS/vmustache'
 Bundle 'Yggdroot/indentLine'
 
@@ -81,6 +76,7 @@ Bundle 'tpope/vim-fugitive'
 
 " }}}
 
+" Common settings {{{1
 filetype plugin indent on
 
 let mapleader = ","
@@ -88,6 +84,19 @@ let mapleader = ","
 nnoremap ; :
 
 nmap <C-z> <Nop>
+
+" Colorscheme
+set t_Co=256
+set background=dark
+colo earth
+
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
+set smartindent
+
+set number
 
 " Jump to an end of a string
 inoremap ,a <C-o>A
@@ -107,9 +116,42 @@ inoremap <C-k> <C-o>k
 inoremap <C-l> <C-o>l
 " }}}
 
+" Centering search result {{{2
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
+" 2}}}
+
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>rv :so $MYVIMRC<CR>
+
 " Write file with root permissions
 command! W w !sudo tee %
 
+" Working with buffers {{{2
+nmap <Leader>l :CtrlPBuffer<CR>
+nmap <Leader>d :bd<CR>
+nmap <Leader>bj :bn<CR>
+nmap <Leader>bk :bp<CR>
+nmap <C-h> <C-^> " Toggle between two buffers
+" 2}}}
+
+" Substitute functions {{{2
+nnoremap <leader>s :%s//<left>
+function! Replace(string)
+    let replace = input("Replace " . a:string . " with: ")
+    :exe '%s/\<' . a:string . '\>/' .  replace
+endfunction
+nnoremap <leader>r :call Replace(expand('<cword>'))<CR>
+nnoremap <leader>R :call Replace(expand('<cWORD>'))<CR>
+" 2}}}
+" 1}}}
+
+" Eclim {{{
 " Code autocompletion with eclim
 if has("gui_running")
     inoremap <C-Space> <C-x><C-u>
@@ -120,40 +162,17 @@ endif
 au FileType php noremap <silent> <buffer> \ :PhpSearchContext<cr>
 nnoremap <Leader>pc :ProjectCreate 
 nnoremap <Leader>pl :ProjectList<CR>
-
-" Substitute functions {{{
-nnoremap <leader>s :%s//<left>
-function! Replace(string)
-    let replace = input("Replace " . a:string . " with: ")
-    :exe '%s/\<' . a:string . '\>/' .  replace
-endfunction
-nnoremap <leader>r :call Replace(expand('<cword>'))<CR>
-nnoremap <leader>R :call Replace(expand('<cWORD>'))<CR>
 " }}}
 
-" Centering search result
-nmap n nzz
-nmap N Nzz
-nmap * *zz
-nmap # #zz
-nmap g* g*zz
-nmap g# g#zz
-
-" Quickly edit/reload the vimrc file
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>rv :so $MYVIMRC<CR>
-
-" Ultisnips
+" Ultisnips {{{
 let g:UltiSnipsSnippetDirectories=["my-snippets"]
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" }}}
 
 " Airline
 set laststatus=2
-
-" Unite
-nnoremap <space>u :Unite 
 
 " YouCompleteMe
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -162,13 +181,6 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 " NERDTree
 nmap <BS> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
-
-" Working with buffers
-nmap <Leader>l :CtrlPBuffer<CR>
-nmap <Leader>d :bd<CR>
-nmap <Leader>bj :bn<CR>
-nmap <Leader>bk :bp<CR>
-nmap <C-h> <C-^> " Toggle between two buffers
 
 " Ack
 nmap <Leader>a :Ack 
@@ -194,11 +206,6 @@ nmap <Leader>gc :Git
 nmap <Leader>gs :Gstatus<CR>
 nmap <Leader>gb :Gblame<CR>
 
-" PHPUnit
-au FileType php nnoremap <Leader>tc :Test 
-au FileType php nnoremap <Leader>ta :Test<CR>
-au FileType php nnoremap <Leader>tf :Test %<CR>
-
 " CtrlP {{{
 let g:ctrlp_by_filename = 1
 let g:ctrlp_max_files = 0
@@ -223,6 +230,7 @@ let g:ctrlp_extensions = ['funky', 'nerdtree']
 " let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 nnoremap <Space><BS> :CtrlPNerdTree<CR> 
 nnoremap <Space>/ :CtrlPBufLine<CR>
+nnoremap <C-z>  :CtrlP src/<CR>
 nnoremap <C-z>m :CtrlPSymfony2Entities<CR>
 nnoremap <C-z>c :CtrlPSymfony2Controllers<CR>
 nnoremap <C-z>v :CtrlPSymfony2Views<CR>
@@ -232,6 +240,30 @@ nnoremap <C-z>o :CtrlPSymfony2Configs<CR>
 
 " Easy motion
 let g:EasyMotion_leader_key = '<Space>'
+
+" PHP {{{
+au FileType php inoremap ,, ->
+au FileType php inoremap ,t $this->
+au FileType php inoremap ,r return ;<Esc>i
+au FileType php inoremap ,< <?php<CR><CR>
+au FileType php inoremap ,> <?php  ?><Esc>hhha
+
+au FileType php nnoremap gf :call composer#open_file#open(expand('<cword>'))<CR>
+
+" PHP folding
+let php_folding=0
+
+" PHP documentor
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+
+" PHP Complete
+autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
+let g:phpcomplete_index_composer_command = 'composer'
+
+" PHPUnit
+au FileType php nnoremap <Leader>tc :Test 
+au FileType php nnoremap <Leader>ta :Test<CR>
+au FileType php nnoremap <Leader>tf :Test %<CR>
 
 " PHP getset plugin
 let g:phpgetset_getterTemplate =
@@ -246,36 +278,5 @@ let g:phpgetset_setterTemplate =
             \ "    {\n" .
             \ "        $this->%varname% = $%varname%;\n" .
             \ "    }"
-
-" PHP folding
-let php_folding=0
-
-" PHP
-au FileType php inoremap ,, ->
-au FileType php inoremap ,t $this->
-au FileType php inoremap ,r return ;<Esc>i
-au FileType php inoremap ,< <?php<CR><CR>
-au FileType php inoremap ,> <?php  ?><Esc>hhha
-
-au FileType php nnoremap gf :call composer#open_file#open(expand('<cword>'))<CR>
-
-" PHP documentor
-let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
-
-" PHP Complete
-autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
-let g:phpcomplete_index_composer_command = 'composer'
-
-" Colorscheme
-set t_Co=256
-set background=dark
-colo earth
-
-set tabstop=4
-set shiftwidth=4
-set smarttab
-set expandtab
-set smartindent
-
-set number
+" }}}
 " vim: foldmethod=marker
