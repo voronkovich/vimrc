@@ -21,11 +21,11 @@ Bundle 'tpope/vim-surround'
 Bundle 'embear/vim-localvimrc'
 Bundle 'tobyS/vmustache'
 Bundle 'Yggdroot/indentLine'
+Bundle 'xolox/vim-misc'
 
 " Colorschemes
+Bundle 'xolox/vim-colorscheme-switcher'
 Bundle 'vim-scripts/wombat256.vim'
-Bundle 'jeffreyiacono/vim-colors-wombat'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'flazz/vim-colorschemes'
 
 " Comments
@@ -41,14 +41,17 @@ Bundle 'voronkovich/my-vim-snippets'
 Bundle 'stocarul/ultisnips-symfony2'
 
 " PHP
+Bundle 'StanAngeloff/php.vim'
+Bundle '2072/PHP-Indenting-for-VIm'
 Bundle 'rayburgemeestre/phpfolding.vim'
+Bundle 'shawncplus/phpcomplete.vim'
 " Bundle 'voronkovich/vim-phpdoc'
 Bundle 'voronkovich/vim-composer-open-class-file'
 Bundle 'tobyS/pdv'
 Bundle 'voronkovich/vim-phpunit-snippets'
 Bundle 'voronkovich/php-getter-setter.vim'
 " Conflicts with eclim http://eclim.org
-" Bundle 'docteurklein/vim-symfony'
+Bundle 'docteurklein/vim-symfony'
 Bundle 'joonty/vim-phpunitqf.git'
 Bundle 'evidens/vim-twig'
 " Bundle 'm2mdas/phpcomplete-extended'
@@ -134,6 +137,7 @@ command! W w !sudo tee %
 
 " Working with buffers {{{2
 nmap <Leader>l :CtrlPBuffer<CR>
+nmap <Space>l :CtrlPBuffer<CR>
 nmap <Leader>d :bd<CR>
 nmap <Leader>bj :bn<CR>
 nmap <Leader>bk :bp<CR>
@@ -154,9 +158,9 @@ nnoremap <leader>R :call Replace(expand('<cWORD>'))<CR>
 " Eclim {{{
 " Code autocompletion with eclim
 if has("gui_running")
-    inoremap <C-Space> <C-x><C-u>
+    inoremap <C-Space> <C-x><C-o>
 else
-    inoremap <Nul> <C-x><C-u>
+    inoremap <Nul> <C-x><C-o>
 endif
 "let g:EclimCompletionMethod = 'omnifunc'
 au FileType php noremap <silent> <buffer> \ :PhpSearchContext<cr>
@@ -219,11 +223,11 @@ if executable('ag')
           \ --ignore .DS_Store
           \ --ignore "**/.*.swp"
           \ --ignore "**/*.pyc"
-          \ --ignore "./app/cache"
-          \ --ignore "./bin"
-          \ --ignore "./build"
-          \ --ignore "./vendor/composer"
-          \ --ignore "./web/bundles"
+          \ --ignore "app/cache"
+          \ --ignore "bin"
+          \ --ignore "build"
+          \ --ignore "vendor/composer"
+          \ --ignore "web/bundles"
           \ -g ""'
 endif
 let g:ctrlp_extensions = ['funky', 'nerdtree']
@@ -257,8 +261,8 @@ let php_folding=0
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 
 " PHP Complete
-autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
-let g:phpcomplete_index_composer_command = 'composer'
+" autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
+" let g:phpcomplete_index_composer_command = 'composer'
 
 " PHPUnit
 au FileType php nnoremap <Leader>tc :Test 
@@ -278,5 +282,15 @@ let g:phpgetset_setterTemplate =
             \ "    {\n" .
             \ "        $this->%varname% = $%varname%;\n" .
             \ "    }"
+
+" Advanced highlighting
+function! PhpSyntaxOverride()
+    hi! def link phpDocTags  phpDefine
+    hi! def link phpDocParam phpType
+endfunction
+augroup phpSyntaxOverride
+    autocmd!
+    autocmd FileType php call PhpSyntaxOverride()
+augroup END
 " }}}
 " vim: foldmethod=marker
