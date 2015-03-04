@@ -38,7 +38,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 Bundle 'voronkovich/my-vim-snippets'
-Bundle 'stocarul/ultisnips-symfony2'
+Bundle 'algotech/ultisnips-php'
 
 " PHP
 Bundle 'StanAngeloff/php.vim'
@@ -169,7 +169,7 @@ nnoremap <Leader>pl :ProjectList<CR>
 " }}}
 
 " Ultisnips {{{
-let g:UltiSnipsSnippetDirectories=["my-snippets"]
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "my-snippets"]
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
@@ -235,6 +235,7 @@ let g:ctrlp_extensions = ['funky', 'nerdtree']
 nnoremap <Space><BS> :CtrlPNerdTree<CR> 
 nnoremap <Space>/ :CtrlPBufLine<CR>
 nnoremap <C-z>  :CtrlP src/<CR>
+nnoremap <C-z>s :CtrlP src/<CR>
 nnoremap <C-z>m :CtrlPSymfony2Entities<CR>
 nnoremap <C-z>c :CtrlPSymfony2Controllers<CR>
 nnoremap <C-z>v :CtrlPSymfony2Views<CR>
