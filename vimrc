@@ -11,11 +11,10 @@ Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'FelikZ/ctrlp-py-matcher'
 Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'kassio/ctrlp-bufline.vim'
-Bundle 'voronkovich/ctrlp-symfony2.vim'
 Bundle 'voronkovich/ctrlp-nerdtree.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'bling/vim-airline'
-Bundle 'mileszs/ack.vim'
+Bundle 'ervandew/ag'
 Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-surround'
 Bundle 'embear/vim-localvimrc'
@@ -45,6 +44,7 @@ Bundle 'StanAngeloff/php.vim'
 Bundle '2072/PHP-Indenting-for-VIm'
 Bundle 'rayburgemeestre/phpfolding.vim'
 Bundle 'shawncplus/phpcomplete.vim'
+Bundle 'voronkovich/ctrlp-symfony2.vim'
 " Bundle 'voronkovich/vim-phpdoc'
 Bundle 'voronkovich/vim-composer-open-class-file'
 Bundle 'tobyS/pdv'
@@ -186,8 +186,8 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 nmap <BS> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
 
-" Ack
-nmap <Leader>a :Ack 
+" Ag
+nmap <Leader>a :Ag 
 
 " Saving by Ctrl+s
 map <C-a> <Esc>:w<CR> " Add: alias vim="stty stop '' -ixoff ; vim" in your bash aliases
