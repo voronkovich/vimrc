@@ -234,7 +234,7 @@ let g:ctrlp_extensions = ['funky', 'nerdtree']
 " let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 nnoremap <Space><BS> :CtrlPNerdTree<CR> 
 nnoremap <Space>/ :CtrlPBufLine<CR>
-nnoremap <C-z>  :CtrlP src/<CR>
+nnoremap <C-z>  :CtrlPSymfony2Sources<CR>
 nnoremap <C-z>s :CtrlP src/<CR>
 nnoremap <C-z>m :CtrlPSymfony2Entities<CR>
 nnoremap <C-z>c :CtrlPSymfony2Controllers<CR>
