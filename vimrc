@@ -8,7 +8,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'FelikZ/ctrlp-py-matcher'
+Bundle 'nixprime/cpsm'
 Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'kassio/ctrlp-bufline.vim'
 Bundle 'voronkovich/ctrlp-nerdtree.vim'
@@ -30,7 +30,7 @@ Bundle 'flazz/vim-colorschemes'
 " Comments
 Bundle 'tpope/vim-commentary'
 
-" Code complition
+" Code completion
 " Bundle 'Valloric/YouCompleteMe'
 
 " Snippets
@@ -231,7 +231,7 @@ if executable('ag')
           \ -g ""'
 endif
 let g:ctrlp_extensions = ['funky', 'nerdtree']
-" let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+let g:ctrlp_match_func = { 'match': 'cpsm#CtrlPMatch' }
 nnoremap <Space><BS> :CtrlPNerdTree<CR> 
 nnoremap <Space>/ :CtrlPBufLine<CR>
 nnoremap <C-z>  :CtrlPSymfony2Sources<CR>
