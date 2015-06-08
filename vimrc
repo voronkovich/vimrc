@@ -7,20 +7,21 @@ call vundle#rc()
 " Common
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
-Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'nixprime/cpsm'
-Bundle 'tacahiroy/ctrlp-funky'
-Bundle 'kassio/ctrlp-bufline.vim'
-Bundle 'voronkovich/ctrlp-nerdtree.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'bling/vim-airline'
 Bundle 'ervandew/ag'
 Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-surround'
 Bundle 'embear/vim-localvimrc'
-Bundle 'tobyS/vmustache'
 Bundle 'Yggdroot/indentLine'
 Bundle 'xolox/vim-misc'
+
+" CtrlP
+Bundle 'ctrlpvim/ctrlp.vim'
+Bundle 'nixprime/cpsm'
+Bundle 'tacahiroy/ctrlp-funky'
+Bundle 'kassio/ctrlp-bufline.vim'
+Bundle 'voronkovich/ctrlp-nerdtree.vim'
 
 " Colorschemes
 Bundle 'xolox/vim-colorscheme-switcher'
@@ -45,9 +46,8 @@ Bundle '2072/PHP-Indenting-for-VIm'
 Bundle 'rayburgemeestre/phpfolding.vim'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'voronkovich/ctrlp-symfony2.vim'
-" Bundle 'voronkovich/vim-phpdoc'
+Bundle 'mikehaertl/pdv-standalone'
 Bundle 'voronkovich/vim-composer-open-class-file'
-Bundle 'tobyS/pdv'
 Bundle 'voronkovich/vim-phpunit-snippets'
 Bundle 'voronkovich/php-getter-setter.vim'
 " Conflicts with eclim http://eclim.org
@@ -57,9 +57,7 @@ Bundle 'evidens/vim-twig'
 " Bundle 'm2mdas/phpcomplete-extended'
 " Bundle 'm2mdas/phpcomplete-extended-symfony'
 Bundle 'arnaud-lb/vim-php-namespace'
-
-" JavaScript
-" Bundle 'marijnh/tern_for_vim'
+Bundle 'vim-php/vim-php-refactoring'
 
 " Html
 Bundle 'Valloric/MatchTagAlways'
@@ -67,16 +65,6 @@ Bundle 'mattn/emmet-vim'
 
 " ZSH highlighting
 Bundle 'clones/vim-zsh'
-
-" Fish
-Bundle 'dag/vim-fish'
-
-" Puppet
-Bundle 'rodjek/vim-puppet'
-
-" CVS
-Bundle 'tpope/vim-fugitive'
-
 " }}}
 
 " Common settings {{{1
@@ -189,7 +177,7 @@ let NERDTreeQuitOnOpen = 1
 " Ag
 nmap <Leader>a :Ag 
 
-" Saving by Ctrl+s
+" Saving by Ctrl+a
 map <C-a> <Esc>:w<CR> " Add: alias vim="stty stop '' -ixoff ; vim" in your bash aliases
 imap <C-a> <Esc>:w<CR>
 
@@ -204,11 +192,6 @@ let g:pdv_cfg_Copyright = strftime("%Y")." by Oleg Voronkovich <oleg-voronkovich
 au FileType php inoremap <Leader>pd <ESC>:call PhpDocSingle()<CR>i
 au FileType php nnoremap <Leader>pd :call PhpDocSingle()<CR>
 au FileType php vnoremap <Leader>pd :call PhpDocRange()<CR>
-
-" Git 
-nmap <Leader>gc :Git 
-nmap <Leader>gs :Gstatus<CR>
-nmap <Leader>gb :Gblame<CR>
 
 " CtrlP {{{
 let g:ctrlp_by_filename = 1
