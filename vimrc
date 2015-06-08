@@ -232,6 +232,7 @@ if executable('ag')
 endif
 let g:ctrlp_extensions = ['funky', 'nerdtree']
 let g:ctrlp_match_func = { 'match': 'cpsm#CtrlPMatch' }
+let g:cpsm_highlight_mode = 'detailed'
 nnoremap <Space><BS> :CtrlPNerdTree<CR> 
 nnoremap <Space>/ :CtrlPBufLine<CR>
 nnoremap <C-z>  :CtrlPSymfony2Sources<CR>
