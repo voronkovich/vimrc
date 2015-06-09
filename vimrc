@@ -185,7 +185,7 @@ au FileType php nnoremap <Leader>pd :call PhpDocSingle()<CR>
 au FileType php vnoremap <Leader>pd :call PhpDocRange()<CR>
 
 " Guttentags
-let g:gutentags_project_root = [ 'vendor', ]
+let g:gutentags_project_root = [ 'vendor/composer' ]
 
 " CtrlP {{{
 let g:ctrlp_by_filename = 1
