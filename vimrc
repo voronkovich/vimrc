@@ -15,7 +15,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'embear/vim-localvimrc'
 Bundle 'Yggdroot/indentLine'
 Bundle 'xolox/vim-misc'
-" Required by 'beberlei/vim-php-refactor'
 Bundle 'austintaylor/vim-commaobject'
 
 " Tags
@@ -60,8 +59,7 @@ Bundle 'docteurklein/vim-symfony'
 Bundle 'joonty/vim-phpunitqf.git'
 Bundle 'evidens/vim-twig'
 Bundle 'arnaud-lb/vim-php-namespace'
-Bundle 'vim-php/vim-php-refactoring'
-Bundle 'beberlei/vim-php-refactor'
+Bundle 'adoy/vim-php-refactoring-toolbox'
 
 " Html
 Bundle 'Valloric/MatchTagAlways'
@@ -198,6 +196,9 @@ let g:pdv_cfg_autoEndClass = 0
 au FileType php inoremap <Leader>pd <ESC>:call PhpDocSingle()<CR>i
 au FileType php nnoremap <Leader>pd :call PhpDocSingle()<CR>
 au FileType php vnoremap <Leader>pd :call PhpDocRange()<CR>
+
+" Guttentags
+let g:gutentags_project_root = [ 'vendor', ]
 
 " CtrlP {{{
 let g:ctrlp_by_filename = 1
