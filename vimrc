@@ -82,6 +82,8 @@ nmap <C-z> <Nop>
 set t_Co=256
 set background=dark
 colo earth
+hi Pmenu ctermfg=0 ctermbg=100
+hi PmenuSel ctermfg=90 ctermbg=100
 
 set tabstop=4
 set shiftwidth=4
@@ -264,8 +266,6 @@ let g:phpgetset_setterTemplate =
             \ "    }"
 
 " Advanced highlighting
-hi Pmenu ctermfg=0 ctermbg=100
-hi PmenuSel ctermfg=90 ctermbg=100
 function! PhpSyntaxOverride()
     hi! def link phpDocTags  phpDefine
     hi! def link phpDocParam phpType
