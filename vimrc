@@ -145,19 +145,6 @@ nnoremap <leader>R :call Replace(expand('<cWORD>'))<CR>
 " 2}}}
 " 1}}}
 
-" Eclim {{{
-" Code autocompletion with eclim
-if has("gui_running")
-    inoremap <C-Space> <C-x><C-o>
-else
-    inoremap <Nul> <C-x><C-o>
-endif
-"let g:EclimCompletionMethod = 'omnifunc'
-au FileType php noremap <silent> <buffer> \ :PhpSearchContext<cr>
-nnoremap <Leader>pc :ProjectCreate 
-nnoremap <Leader>pl :ProjectList<CR>
-" }}}
-
 " Ultisnips {{{
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "my-snippets"]
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -249,11 +236,13 @@ au FileType php nnoremap gf :call composer#open_file#open(expand('<cword>'))<CR>
 " PHP folding
 let php_folding=0
 
-" PHP documentor
-let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
-
 " PHP Complete
 let g:phpcomplete_parse_docblock_comments = 1
+if has("gui_running")
+    inoremap <C-Space> <C-x><C-o>
+else
+    inoremap <Nul> <C-x><C-o>
+endif
 
 " PHPUnit
 au FileType php nnoremap <Leader>tc :Test 
