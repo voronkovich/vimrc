@@ -15,6 +15,11 @@ Bundle 'tpope/vim-surround'
 Bundle 'embear/vim-localvimrc'
 Bundle 'Yggdroot/indentLine'
 Bundle 'xolox/vim-misc'
+" Required by 'beberlei/vim-php-refactor'
+Bundle 'austintaylor/vim-commaobject'
+
+" Tags
+Bundle 'ludovicchabant/vim-gutentags'
 
 " CtrlP
 Bundle 'ctrlpvim/ctrlp.vim'
@@ -25,14 +30,13 @@ Bundle 'voronkovich/ctrlp-nerdtree.vim'
 
 " Colorschemes
 Bundle 'xolox/vim-colorscheme-switcher'
-Bundle 'vim-scripts/wombat256.vim'
 Bundle 'flazz/vim-colorschemes'
 
 " Comments
 Bundle 'tpope/vim-commentary'
 
 " Code completion
-" Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
 
 " Snippets
 Bundle 'SirVer/ultisnips'
@@ -46,7 +50,8 @@ Bundle '2072/PHP-Indenting-for-VIm'
 Bundle 'rayburgemeestre/phpfolding.vim'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'voronkovich/ctrlp-symfony2.vim'
-Bundle 'mikehaertl/pdv-standalone'
+" Bundle 'mikehaertl/pdv-standalone'
+Bundle 'Rican7/php-doc-modded'
 Bundle 'voronkovich/vim-composer-open-class-file'
 Bundle 'voronkovich/vim-phpunit-snippets'
 Bundle 'voronkovich/php-getter-setter.vim'
@@ -54,10 +59,9 @@ Bundle 'voronkovich/php-getter-setter.vim'
 Bundle 'docteurklein/vim-symfony'
 Bundle 'joonty/vim-phpunitqf.git'
 Bundle 'evidens/vim-twig'
-" Bundle 'm2mdas/phpcomplete-extended'
-" Bundle 'm2mdas/phpcomplete-extended-symfony'
 Bundle 'arnaud-lb/vim-php-namespace'
 Bundle 'vim-php/vim-php-refactoring'
+Bundle 'beberlei/vim-php-refactor'
 
 " Html
 Bundle 'Valloric/MatchTagAlways'
@@ -188,6 +192,8 @@ autocmd! BufNewFile * silent! 0r ~/.vim/vimrc/templates/template.%:e
 let g:pdv_cfg_Author = "Oleg Voronkovich <oleg-voronkovich@yandex.ru>"
 let g:pdv_cfg_License = "GNU LGPL 3 or above"
 let g:pdv_cfg_Copyright = strftime("%Y")." by Oleg Voronkovich <oleg-voronkovich@yandex.ru>"
+let g:pdv_cfg_autoEndFunction = 0
+let g:pdv_cfg_autoEndClass = 0
 
 au FileType php inoremap <Leader>pd <ESC>:call PhpDocSingle()<CR>i
 au FileType php nnoremap <Leader>pd :call PhpDocSingle()<CR>
@@ -246,8 +252,7 @@ let php_folding=0
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 
 " PHP Complete
-" autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
-" let g:phpcomplete_index_composer_command = 'composer'
+let g:phpcomplete_parse_docblock_comments = 1
 
 " PHPUnit
 au FileType php nnoremap <Leader>tc :Test 
@@ -269,6 +274,8 @@ let g:phpgetset_setterTemplate =
             \ "    }"
 
 " Advanced highlighting
+hi Pmenu ctermfg=0 ctermbg=100
+hi PmenuSel ctermfg=90 ctermbg=100
 function! PhpSyntaxOverride()
     hi! def link phpDocTags  phpDefine
     hi! def link phpDocParam phpType
