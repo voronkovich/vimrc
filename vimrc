@@ -15,7 +15,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'embear/vim-localvimrc'
 Bundle 'Yggdroot/indentLine'
 Bundle 'xolox/vim-misc'
-Bundle 'austintaylor/vim-commaobject'
+Bundle 'scrooloose/syntastic'
 
 " Tags
 Bundle 'ludovicchabant/vim-gutentags'
@@ -25,6 +25,8 @@ Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'nixprime/cpsm'
 Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'kassio/ctrlp-bufline.vim'
+Bundle 'fisadev/vim-ctrlp-cmdpalette'
+Bundle 'ivalkeen/vim-ctrlp-tjump'
 Bundle 'voronkovich/ctrlp-nerdtree.vim'
 
 " Colorschemes
@@ -40,8 +42,8 @@ Bundle 'Valloric/YouCompleteMe'
 " Snippets
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
-Bundle 'voronkovich/my-vim-snippets'
 Bundle 'algotech/ultisnips-php'
+Bundle 'voronkovich/my-vim-snippets'
 
 " PHP
 Bundle 'StanAngeloff/php.vim'
@@ -49,17 +51,15 @@ Bundle '2072/PHP-Indenting-for-VIm'
 Bundle 'rayburgemeestre/phpfolding.vim'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'voronkovich/ctrlp-symfony2.vim'
-" Bundle 'mikehaertl/pdv-standalone'
 Bundle 'Rican7/php-doc-modded'
+Bundle 'docteurklein/vim-symfony'
+Bundle 'arnaud-lb/vim-php-namespace'
+Bundle 'joonty/vim-phpunitqf.git'
+Bundle 'evidens/vim-twig'
+Bundle 'adoy/vim-php-refactoring-toolbox'
 Bundle 'voronkovich/vim-composer-open-class-file'
 Bundle 'voronkovich/vim-phpunit-snippets'
 Bundle 'voronkovich/php-getter-setter.vim'
-" Conflicts with eclim http://eclim.org
-Bundle 'docteurklein/vim-symfony'
-Bundle 'joonty/vim-phpunitqf.git'
-Bundle 'evidens/vim-twig'
-Bundle 'arnaud-lb/vim-php-namespace'
-Bundle 'adoy/vim-php-refactoring-toolbox'
 
 " Html
 Bundle 'Valloric/MatchTagAlways'
@@ -172,6 +172,9 @@ nmap <Leader>a :Ag
 map <C-a> <Esc>:w<CR> " Add: alias vim="stty stop '' -ixoff ; vim" in your bash aliases
 imap <C-a> <Esc>:w<CR>
 
+" CtrlP command palette
+nnoremap <Space>; :CtrlPCmdPalette<CR>
+
 " File templates
 autocmd! BufNewFile * silent! 0r ~/.vim/vimrc/templates/template.%:e
 
@@ -226,6 +229,19 @@ nnoremap <C-z>o :CtrlPSymfony2Configs<CR>
 " Easy motion
 let g:EasyMotion_leader_key = '<Space>'
 
+" Synastic {{{
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_php_checkers = ['php']
+" }}}
+
 " PHP {{{
 au FileType php inoremap ,, ->
 au FileType php inoremap ,t $this->
@@ -239,7 +255,6 @@ au FileType php nnoremap gf :call composer#open_file#open(expand('<cword>'))<CR>
 let php_folding=0
 
 " PHP Complete
-let g:phpcomplete_parse_docblock_comments = 1
 if has("gui_running")
     inoremap <C-Space> <C-x><C-o>
 else
@@ -265,6 +280,10 @@ let g:phpgetset_setterTemplate =
             \ "        $this->%varname% = $%varname%;\n" .
             \ "    }"
 
+" PHP namespace
+inoremap <Leader>pu <C-O>:call PhpInsertUse()<CR>
+noremap <Leader>pu :call PhpInsertUse()<CR>
+
 " Advanced highlighting
 function! PhpSyntaxOverride()
     hi! def link phpDocTags  phpDefine
@@ -275,4 +294,5 @@ augroup phpSyntaxOverride
     autocmd FileType php call PhpSyntaxOverride()
 augroup END
 " }}}
+
 " vim: foldmethod=marker
