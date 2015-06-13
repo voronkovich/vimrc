@@ -16,6 +16,8 @@ Bundle 'embear/vim-localvimrc'
 Bundle 'Yggdroot/indentLine'
 Bundle 'xolox/vim-misc'
 Bundle 'scrooloose/syntastic'
+Bundle 'duggiefresh/vim-easydir'
+Bundle 'voronkovich/file-magic.vim'
 
 " Tags
 Bundle 'ludovicchabant/vim-gutentags'
@@ -42,7 +44,8 @@ Bundle 'Valloric/YouCompleteMe'
 " Snippets
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
-Bundle 'algotech/ultisnips-php'
+" Bundle 'algotech/ultisnips-php'
+Bundle 'file:///home/oleg/workspace/ultisnips-php/'
 Bundle 'voronkovich/my-vim-snippets'
 
 " PHP
@@ -92,6 +95,7 @@ set expandtab
 set smartindent
 
 set number
+set wildmenu
 
 " Jump to an end of a string
 inoremap ,a <C-o>A
@@ -177,6 +181,13 @@ nnoremap <Space>; :CtrlPCmdPalette<CR>
 
 " File templates
 autocmd! BufNewFile * silent! 0r ~/.vim/vimrc/templates/template.%:e
+
+" FileMagic
+let g:file_magic_items = {
+    \ 'sfcontro': "src/AppBundle/Controller/%sController.php",
+    \ 'sfview': "app/Resources/views/%s.twig",
+    \ 'sfconf': "app/config/%s.yml",
+    \ }
 
 " PHPDoc
 let g:pdv_cfg_Author = "Oleg Voronkovich <oleg-voronkovich@yandex.ru>"
