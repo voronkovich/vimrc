@@ -45,7 +45,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 " Bundle 'algotech/ultisnips-php'
-Bundle 'file:///home/oleg/workspace/ultisnips-php/'
+Bundle 'voronvkoich/ultisnips-php'
 Bundle 'voronkovich/my-vim-snippets'
 
 " PHP
@@ -78,6 +78,10 @@ filetype plugin indent on
 let mapleader = ","
 
 nnoremap ; :
+
+" Quit insert mode
+inoremap jf <Esc>
+inoremap fj <Esc>
 
 nmap <C-z> <Nop>
 
@@ -183,11 +187,14 @@ nnoremap <Space>; :CtrlPCmdPalette<CR>
 autocmd! BufNewFile * silent! 0r ~/.vim/vimrc/templates/template.%:e
 
 " FileMagic
-let g:file_magic_items = {
+let g:file_magic_command_alias = 'Create'
+let g:file_magic_open_command = 'split'
+let g:file_magic_spells = {
     \ 'sfcontro': "src/AppBundle/Controller/%sController.php",
-    \ 'sfview': "app/Resources/views/%s.twig",
-    \ 'sfconf': "app/config/%s.yml",
-    \ }
+    \ 'sfview':   "app/Resources/views/%s.twig",
+    \ 'sfconf':   "app/config/%s.yml",
+    \ 'test': "/tmp/%s/%s/test.txt"
+\ }
 
 " PHPDoc
 let g:pdv_cfg_Author = "Oleg Voronkovich <oleg-voronkovich@yandex.ru>"
@@ -305,5 +312,4 @@ augroup phpSyntaxOverride
     autocmd FileType php call PhpSyntaxOverride()
 augroup END
 " }}}
-
 " vim: foldmethod=marker
