@@ -17,6 +17,7 @@ Bundle 'Yggdroot/indentLine'
 Bundle 'xolox/vim-misc'
 Bundle 'scrooloose/syntastic'
 Bundle 'duggiefresh/vim-easydir'
+Bundle 'mhinz/vim-startify'
 Bundle 'voronkovich/file-magic.vim'
 
 " Tags
