@@ -45,7 +45,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 " Bundle 'algotech/ultisnips-php'
-Bundle 'voronvkoich/ultisnips-php'
+Bundle 'voronkovich/ultisnips-php'
 Bundle 'voronkovich/my-vim-snippets'
 
 " PHP
