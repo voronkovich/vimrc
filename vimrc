@@ -184,9 +184,6 @@ imap <C-a> <Esc>:w<CR>
 " CtrlP command palette
 nnoremap <Space>; :CtrlPCmdPalette<CR>
 
-" File templates
-autocmd! BufNewFile * silent! 0r ~/.vim/vimrc/templates/template.%:e
-
 " FileMagic {{{
 let g:file_magic_command_alias = 'Create'
 let g:file_magic_open_command = 'e'
