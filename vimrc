@@ -187,17 +187,30 @@ nnoremap <Space>; :CtrlPCmdPalette<CR>
 " File templates
 autocmd! BufNewFile * silent! 0r ~/.vim/vimrc/templates/template.%:e
 
-" FileMagic
+" FileMagic {{{
 let g:file_magic_command_alias = 'Create'
-let g:file_magic_open_command = 'split'
+let g:file_magic_open_command = 'e'
 let g:file_magic_spells = {
     \ 'sfcontro': "src/AppBundle/Controller/%sController.php",
+    \ 'sfentity': "src/AppBundle/Entity/%s.php",
+    \ 'sfform':   "src/AppBundle/Form/Type/%sType.php",
     \ 'sfview':   "app/Resources/views/%s.twig",
     \ 'sfconf':   "app/config/%s.yml",
-    \ 'test': "/tmp/%s/%s/test.txt"
+    \ 'here':     "!CreateHere"
 \ }
+" Create file in the same directory as the current buffer
+fun! CreateHere(key, file)
+    let path = expand('%:p:h')
 
-" PHPDoc
+    if ! empty(path)
+        return path . '/' . a:file
+    else
+        return a:file
+    endif
+endfun
+" }}}
+
+" PHPDoc {{{
 let g:pdv_cfg_Author = "Oleg Voronkovich <oleg-voronkovich@yandex.ru>"
 let g:pdv_cfg_License = "GNU LGPL 3 or above"
 let g:pdv_cfg_Copyright = strftime("%Y")." by Oleg Voronkovich <oleg-voronkovich@yandex.ru>"
@@ -207,6 +220,7 @@ let g:pdv_cfg_autoEndClass = 0
 au FileType php inoremap <Leader>pd <ESC>:call PhpDocSingle()<CR>i
 au FileType php nnoremap <Leader>pd :call PhpDocSingle()<CR>
 au FileType php vnoremap <Leader>pd :call PhpDocRange()<CR>
+" }}}
 
 " Guttentags
 let g:gutentags_project_root = [ 'vendor/composer' ]
