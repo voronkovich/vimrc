@@ -84,7 +84,10 @@ nnoremap ; :
 inoremap jf <Esc>
 inoremap fj <Esc>
 
-nmap <C-z> <Nop>
+nnoremap <C-z> <Nop>
+
+" Launch shell command
+nnoremap ! :!
 
 " Colorscheme
 set t_Co=256
@@ -101,6 +104,7 @@ set smartindent
 
 set number
 set wildmenu
+set wildmode=longest,list,full
 
 " Jump to an end of a string
 inoremap ,a <C-o>A
