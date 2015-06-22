@@ -45,16 +45,15 @@ Bundle 'Valloric/YouCompleteMe'
 " Snippets
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
-" Bundle 'algotech/ultisnips-php'
 Bundle 'voronkovich/ultisnips-php'
-Bundle 'voronkovich/my-vim-snippets'
 
 " PHP
 Bundle 'StanAngeloff/php.vim'
 Bundle '2072/PHP-Indenting-for-VIm'
 Bundle 'rayburgemeestre/phpfolding.vim'
 Bundle 'shawncplus/phpcomplete.vim'
-Bundle 'Rican7/php-doc-modded'
+Bundle 'tobyS/pdv'
+Bundle 'tobyS/vmustache'
 Bundle 'docteurklein/vim-symfony'
 Bundle 'arnaud-lb/vim-php-namespace'
 Bundle 'joonty/vim-phpunitqf.git'
@@ -176,6 +175,7 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 
 " NERDTree
 nmap <BS> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeFind<CR>
 let NERDTreeQuitOnOpen = 1
 
 " Ag
@@ -209,18 +209,6 @@ fun! CreateHere(key, file)
         return a:file
     endif
 endfun
-" }}}
-
-" PHPDoc {{{
-let g:pdv_cfg_Author = "Oleg Voronkovich <oleg-voronkovich@yandex.ru>"
-let g:pdv_cfg_License = "GNU LGPL 3 or above"
-let g:pdv_cfg_Copyright = strftime("%Y")." by Oleg Voronkovich <oleg-voronkovich@yandex.ru>"
-let g:pdv_cfg_autoEndFunction = 0
-let g:pdv_cfg_autoEndClass = 0
-
-au FileType php inoremap <Leader>pd <ESC>:call PhpDocSingle()<CR>i
-au FileType php nnoremap <Leader>pd :call PhpDocSingle()<CR>
-au FileType php vnoremap <Leader>pd :call PhpDocRange()<CR>
 " }}}
 
 " Guttentags
@@ -277,12 +265,6 @@ let g:syntastic_php_checkers = ['php']
 " }}}
 
 " PHP {{{
-au FileType php inoremap ,, ->
-au FileType php inoremap ,t $this->
-au FileType php inoremap ,r return ;<Esc>i
-au FileType php inoremap ,< <?php<CR><CR>
-au FileType php inoremap ,> <?php  ?><Esc>hhha
-
 au FileType php nnoremap gf :call composer#open_file#open(expand('<cword>'))<CR>
 
 " PHP folding
@@ -299,6 +281,11 @@ endif
 au FileType php nnoremap <Leader>tc :Test 
 au FileType php nnoremap <Leader>ta :Test<CR>
 au FileType php nnoremap <Leader>tf :Test %<CR>
+
+" PHPDoc
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+au FileType php nnoremap <Leader>pd :call pdv#DocumentWithSnip()<CR>
+
 
 " PHP getset plugin
 let g:phpgetset_getterTemplate =
