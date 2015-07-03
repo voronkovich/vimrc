@@ -9,7 +9,7 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'bling/vim-airline'
-Bundle 'ervandew/ag'
+Bundle 'rking/ag.vim'
 Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-surround'
 Bundle 'embear/vim-localvimrc'
@@ -19,6 +19,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'duggiefresh/vim-easydir'
 Bundle 'mhinz/vim-startify'
 Bundle 'voronkovich/file-magic.vim'
+Bundle 'kana/vim-vspec'
 
 " Tags
 Bundle 'ludovicchabant/vim-gutentags'
@@ -107,6 +108,7 @@ set wildmode=longest,list,full
 
 " Jump to an end of a string
 inoremap ,a <C-o>A
+inoremap ;a <C-o>o
 
 " Disable <Arrow keys> {{{
 inoremap <Up> <NOP>
@@ -140,11 +142,8 @@ nmap <silent> <leader>rv :so $MYVIMRC<CR>
 command! W w !sudo tee %
 
 " Working with buffers {{{2
-nmap <Leader>l :CtrlPBuffer<CR>
 nmap <Space>l :CtrlPBuffer<CR>
-nmap <Leader>d :bd<CR>
-nmap <Leader>bj :bn<CR>
-nmap <Leader>bk :bp<CR>
+nmap <Leader>q :bd<CR>
 nmap <C-h> <C-^> " Toggle between two buffers
 " 2}}}
 
@@ -189,6 +188,7 @@ imap <C-a> <Esc>:w<CR>
 nnoremap <Space>; :CtrlPCmdPalette<CR>
 
 " FileMagic {{{
+nnoremap <Leader>c :Create 
 let g:file_magic_command_alias = 'Create'
 let g:file_magic_open_command = 'e'
 let g:file_magic_spells = {
@@ -283,9 +283,8 @@ au FileType php nnoremap <Leader>ta :Test<CR>
 au FileType php nnoremap <Leader>tf :Test %<CR>
 
 " PHPDoc
-let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
-au FileType php nnoremap <Leader>pd :call pdv#DocumentWithSnip()<CR>
-
+let g:pdv_template_dir = $HOME . "/.vim/bundle/pdv/templates_snip"
+au FileType php nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
 
 " PHP getset plugin
 let g:phpgetset_getterTemplate =
@@ -315,4 +314,5 @@ augroup phpSyntaxOverride
     autocmd FileType php call PhpSyntaxOverride()
 augroup END
 " }}}
+"
 " vim: foldmethod=marker
