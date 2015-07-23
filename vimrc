@@ -46,7 +46,13 @@ Bundle 'Valloric/YouCompleteMe'
 " Snippets
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
-Bundle 'voronkovich/ultisnips-php'
+Bundle 'sniphpets/sniphpets'
+Bundle 'sniphpets/sniphpets-common'
+Bundle 'sniphpets/sniphpets-symfony'
+Bundle 'sniphpets/sniphpets-doctrine'
+Bundle 'sniphpets/sniphpets-phpunit'
+Bundle 'sniphpets/sniphpets-postfix-codes'
+Bundle 'voronkovich/ultisnips-t3js'
 
 " PHP
 Bundle 'StanAngeloff/php.vim'
