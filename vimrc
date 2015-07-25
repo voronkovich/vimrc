@@ -7,7 +7,7 @@ call vundle#rc()
 " Common
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
-Bundle 'Lokaltog/vim-easymotion'
+Bundle 'easymotion/vim-easymotion'
 Bundle 'bling/vim-airline'
 Bundle 'rking/ag.vim'
 Bundle 'Townk/vim-autoclose'
@@ -20,6 +20,7 @@ Bundle 'duggiefresh/vim-easydir'
 Bundle 'mhinz/vim-startify'
 Bundle 'voronkovich/file-magic.vim'
 Bundle 'kana/vim-vspec'
+Bundle 'jeffkreeftmeijer/vim-numbertoggle'
 
 " Tags
 Bundle 'ludovicchabant/vim-gutentags'
