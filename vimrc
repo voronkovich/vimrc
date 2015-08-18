@@ -21,6 +21,7 @@ Bundle 'mhinz/vim-startify'
 Bundle 'voronkovich/file-magic.vim'
 Bundle 'kana/vim-vspec'
 Bundle 'jeffkreeftmeijer/vim-numbertoggle'
+Bundle 'ntpeters/vim-better-whitespace'
 
 " Tags
 Bundle 'ludovicchabant/vim-gutentags'
@@ -304,7 +305,8 @@ let g:phpgetset_setterTemplate =
             \ "    \n" .
             \ "    public function %funcname%($%varname%)\n" .
             \ "    {\n" .
-            \ "        $this->%varname% = $%varname%;\n" .
+            \ "        $this->%varname% = $%varname%;\n\n" .
+            \ "        return $this;\n" .
             \ "    }"
 
 " PHP namespace
