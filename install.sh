@@ -1,23 +1,17 @@
 #!/usr/bin/env bash
 
-SCRIPT_DIRECTORY=$(dirname $(readlink -f $0))
+SCRIPT_DIRECTORY=$(dirname $0)
 
-cd $SCRIPT_DIRECTORY/..
+cd "$SCRIPT_DIRECTORY/.."
 
-if [ ! -d "autoload"  ]; then
-    mkdir "autoload"
-fi;
+[ ! -d "autoload" ] && mkdir "autoload"
+[ ! -d "bundle" ] && mkdir "bundle"
 
-if [ ! -d "bundle"  ]; then
-    mkdir "bundle"
-fi;
+ln -s "$SCRIPT_DIRECTORY/vimrc" "$HOME/.vimrc"
 
-ln -s $SCRIPT_DIRECTORY/vimrc $HOME/.vimrc
+cd bundle
+rm -rf *
 
-cd bundle;
-rm -rf *;
+git clone https://github.com/VundleVim/Vundle.vim
 
-# Install Vundle
-git clone https://github.com/gmarik/vundle.git;
-
-vim +BundleInstall +qall;
+vim +BundleInstall +qall
