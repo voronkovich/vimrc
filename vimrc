@@ -1,85 +1,88 @@
-" Bundles {{{ " Vundle
+" Plugins {{{ " Vundle
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " Common
-Bundle 'VundleVim/Vundle.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'easymotion/vim-easymotion'
-Bundle 'bling/vim-airline'
-Bundle 'rking/ag.vim'
-Bundle 'Townk/vim-autoclose'
-Bundle 'tpope/vim-surround'
-Bundle 'embear/vim-localvimrc'
-Bundle 'Yggdroot/indentLine'
-Bundle 'xolox/vim-misc'
-Bundle 'scrooloose/syntastic'
-Bundle 'duggiefresh/vim-easydir'
-Bundle 'mhinz/vim-startify'
-Bundle 'voronkovich/file-magic.vim'
-Bundle 'kana/vim-vspec'
-Bundle 'jeffkreeftmeijer/vim-numbertoggle'
-Bundle 'ntpeters/vim-better-whitespace'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'bling/vim-airline'
+Plugin 'rking/ag.vim'
+Plugin 'Townk/vim-autoclose'
+Plugin 'tpope/vim-surround'
+Plugin 'embear/vim-localvimrc'
+Plugin 'Yggdroot/indentLine'
+Plugin 'xolox/vim-misc'
+Plugin 'scrooloose/syntastic'
+Plugin 'duggiefresh/vim-easydir'
+Plugin 'mhinz/vim-startify'
+Plugin 'voronkovich/file-magic.vim'
+Plugin 'kana/vim-vspec'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'ntpeters/vim-better-whitespace'
 
 " Tags
-Bundle 'ludovicchabant/vim-gutentags'
+Plugin 'ludovicchabant/vim-gutentags'
 
 " CtrlP
-Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'nixprime/cpsm'
-Bundle 'tacahiroy/ctrlp-funky'
-Bundle 'kassio/ctrlp-bufline.vim'
-Bundle 'fisadev/vim-ctrlp-cmdpalette'
-Bundle 'ivalkeen/vim-ctrlp-tjump'
-Bundle 'voronkovich/ctrlp-nerdtree.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'nixprime/cpsm'
+Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'kassio/ctrlp-bufline.vim'
+Plugin 'fisadev/vim-ctrlp-cmdpalette'
+Plugin 'ivalkeen/vim-ctrlp-tjump'
+Plugin 'voronkovich/ctrlp-nerdtree.vim'
 
 " Colorschemes
-Bundle 'xolox/vim-colorscheme-switcher'
-Bundle 'flazz/vim-colorschemes'
+Plugin 'xolox/vim-colorscheme-switcher'
+Plugin 'flazz/vim-colorschemes'
 
 " Comments
-Bundle 'tpope/vim-commentary'
+Plugin 'tpope/vim-commentary'
 
 " Code completion
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 " Snippets
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
-Bundle 'sniphpets/sniphpets'
-Bundle 'sniphpets/sniphpets-common'
-Bundle 'sniphpets/sniphpets-symfony'
-Bundle 'sniphpets/sniphpets-doctrine'
-Bundle 'sniphpets/sniphpets-phpunit'
-Bundle 'sniphpets/sniphpets-postfix-codes'
-Bundle 'voronkovich/ultisnips-t3js'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'sniphpets/sniphpets'
+Plugin 'sniphpets/sniphpets-common'
+Plugin 'sniphpets/sniphpets-symfony'
+Plugin 'sniphpets/sniphpets-doctrine'
+Plugin 'sniphpets/sniphpets-phpunit'
+Plugin 'sniphpets/sniphpets-postfix-codes'
+Plugin 'voronkovich/ultisnips-t3js'
 
 " PHP
-Bundle 'StanAngeloff/php.vim'
-Bundle '2072/PHP-Indenting-for-VIm'
-Bundle 'rayburgemeestre/phpfolding.vim'
-Bundle 'shawncplus/phpcomplete.vim'
-Bundle 'tobyS/pdv'
-Bundle 'tobyS/vmustache'
-Bundle 'docteurklein/vim-symfony'
-Bundle 'arnaud-lb/vim-php-namespace'
-Bundle 'joonty/vim-phpunitqf.git'
-Bundle 'evidens/vim-twig'
-Bundle 'adoy/vim-php-refactoring-toolbox'
-Bundle 'voronkovich/vim-composer-open-class-file'
-Bundle 'voronkovich/vim-phpunit-snippets'
-Bundle 'voronkovich/php-getter-setter.vim'
-Bundle 'voronkovich/ctrlp-symfony2.vim'
+Plugin 'StanAngeloff/php.vim'
+Plugin '2072/PHP-Indenting-for-VIm'
+Plugin 'rayburgemeestre/phpfolding.vim'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'tobyS/pdv'
+Plugin 'tobyS/vmustache'
+Plugin 'docteurklein/vim-symfony'
+Plugin 'arnaud-lb/vim-php-namespace'
+Plugin 'joonty/vim-phpunitqf.git'
+Plugin 'evidens/vim-twig'
+Plugin 'adoy/vim-php-refactoring-toolbox'
+Plugin 'voronkovich/vim-composer-open-class-file'
+Plugin 'voronkovich/vim-phpunit-snippets'
+Plugin 'voronkovich/php-getter-setter.vim'
+Plugin 'voronkovich/ctrlp-symfony2.vim'
 
 " Html
-Bundle 'Valloric/MatchTagAlways'
-Bundle 'mattn/emmet-vim'
+Plugin 'Valloric/MatchTagAlways'
+Plugin 'mattn/emmet-vim'
 
 " ZSH highlighting
-Bundle 'clones/vim-zsh'
+Plugin 'clones/vim-zsh'
+
+call vundle#end()
 " }}}
+
 
 " Common settings {{{1
 filetype plugin indent on
@@ -200,9 +203,9 @@ nnoremap <Leader>c :Create
 let g:file_magic_command_alias = 'Create'
 let g:file_magic_open_command = 'e'
 let g:file_magic_spells = {
-    \ 'sfcontro': "src/AppBundle/Controller/%sController.php",
-    \ 'sfentity': "src/AppBundle/Entity/%s.php",
-    \ 'sfform':   "src/AppBundle/Form/Type/%sType.php",
+    \ 'sfcontro': "src/AppPlugin/Controller/%sController.php",
+    \ 'sfentity': "src/AppPlugin/Entity/%s.php",
+    \ 'sfform':   "src/AppPlugin/Form/Type/%sType.php",
     \ 'sfview':   "app/Resources/views/%s.twig",
     \ 'sfconf':   "app/config/%s.yml",
     \ 'here':     "!CreateHere"
