@@ -257,6 +257,7 @@ nnoremap <C-z>c :CtrlPSymfony2Controllers<CR>
 nnoremap <C-z>v :CtrlPSymfony2Views<CR>
 nnoremap <C-z>a :CtrlPSymfony2Assets<CR>
 nnoremap <C-z>o :CtrlPSymfony2Configs<CR>
+nnoremap <Space>f :CtrlPFunky<CR>
 " }}}
 
 " Easy motion
