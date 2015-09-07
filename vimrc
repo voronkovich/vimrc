@@ -60,7 +60,7 @@ Plugin 'voronkovich/ultisnips-t3js'
 Plugin 'StanAngeloff/php.vim'
 Plugin '2072/PHP-Indenting-for-VIm'
 Plugin 'rayburgemeestre/phpfolding.vim'
-Plugin 'shawncplus/phpcomplete.vim'
+" Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'tobyS/pdv'
 Plugin 'tobyS/vmustache'
 Plugin 'docteurklein/vim-symfony'
@@ -189,7 +189,7 @@ nnoremap <C-n> :NERDTreeFind<CR>
 let NERDTreeQuitOnOpen = 1
 
 " Ag
-nmap <Leader>a :Ag 
+nmap <Leader>a :Ag
 
 " Saving by Ctrl+a
 map <C-a> <Esc>:w<CR> " Add: alias vim="stty stop '' -ixoff ; vim" in your bash aliases
@@ -248,7 +248,7 @@ endif
 let g:ctrlp_extensions = ['funky', 'nerdtree']
 let g:ctrlp_match_func = { 'match': 'cpsm#CtrlPMatch' }
 let g:cpsm_highlight_mode = 'detailed'
-nnoremap <Space><BS> :CtrlPNerdTree<CR> 
+nnoremap <Space><BS> :CtrlPNerdTree<CR>
 nnoremap <Space>/ :CtrlPBufLine<CR>
 nnoremap <C-z>  :CtrlPSymfony2Sources<CR>
 nnoremap <C-z>s :CtrlP src/<CR>
@@ -257,7 +257,7 @@ nnoremap <C-z>c :CtrlPSymfony2Controllers<CR>
 nnoremap <C-z>v :CtrlPSymfony2Views<CR>
 nnoremap <C-z>a :CtrlPSymfony2Assets<CR>
 nnoremap <C-z>o :CtrlPSymfony2Configs<CR>
-nnoremap <Space>f :CtrlPFunky<CR>
+nnoremap <Leader>f :CtrlPFunky<CR>
 " }}}
 
 " Easy motion
