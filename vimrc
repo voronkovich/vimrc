@@ -65,6 +65,7 @@ Plugin 'tobyS/pdv'
 Plugin 'tobyS/vmustache'
 Plugin 'docteurklein/vim-symfony'
 Plugin 'arnaud-lb/vim-php-namespace'
+Plugin 'dantleech/vim-phpnamespace'
 Plugin 'joonty/vim-phpunitqf.git'
 Plugin 'evidens/vim-twig'
 Plugin 'adoy/vim-php-refactoring-toolbox'
@@ -316,6 +317,10 @@ let g:phpgetset_setterTemplate =
 " PHP namespace
 inoremap <Leader>pu <C-O>:call PhpInsertUse()<CR>
 noremap <Leader>pu :call PhpInsertUse()<CR>
+inoremap <Leader>pe <C-O>:call PhpExpandClass()<CR>
+noremap <Leader>pe :call PhpExpandClass()<CR>
+inoremap <silent><leader>pn :call PhpNamespaceInsert()<CR>
+noremap <silent><leader>pn :call PhpNamespaceInsert()<CR>
 
 " Advanced highlighting
 function! PhpSyntaxOverride()
