@@ -171,7 +171,7 @@ nnoremap <leader>R :call Replace(expand('<cWORD>'))<CR>
 " 1}}}
 
 " Ultisnips {{{
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "my-snippets"]
+let g:UltiSnipsSnippetDirectories=[ "UltiSnips", $HOME . '/.vim/vimrc/UltiSnips' ]
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
@@ -185,16 +185,16 @@ let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 
 " NERDTree
-nmap <BS> :NERDTreeToggle<CR>
+nnoremap <BS> :NERDTreeToggle<CR>
 nnoremap <C-n> :NERDTreeFind<CR>
 let NERDTreeQuitOnOpen = 1
 
 " Ag
-nmap <Leader>a :Ag
+nnoremap <Leader>a :Ag
 
 " Saving by Ctrl+a
-map <C-a> <Esc>:w<CR> " Add: alias vim="stty stop '' -ixoff ; vim" in your bash aliases
-imap <C-a> <Esc>:w<CR>
+nnoremap <C-a> <Esc>:w<CR>
+inoremap <C-a> <Esc>:w<CR>
 
 " CtrlP command palette
 nnoremap <Space>; :CtrlPCmdPalette<CR>
