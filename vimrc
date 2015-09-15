@@ -184,6 +184,8 @@ set laststatus=2
 " YouCompleteMe
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:ycm_semantic_triggers = {}
+let g:ycm_semantic_triggers.php = [ '->', '::', '(', 'use ', 'namespace ', '\' ]
 
 " NERDTree
 nnoremap <BS> :NERDTreeToggle<CR>
