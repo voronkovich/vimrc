@@ -207,9 +207,10 @@ nnoremap <Leader>c :Create
 let g:file_magic_command_alias = 'Create'
 let g:file_magic_open_command = 'e'
 let g:file_magic_spells = {
-    \ 'sfcontro': "src/AppPlugin/Controller/%sController.php",
-    \ 'sfentity': "src/AppPlugin/Entity/%s.php",
-    \ 'sfform':   "src/AppPlugin/Form/Type/%sType.php",
+    \ 'sfcontro': "src/AppBundle/Controller/%sController.php",
+    \ 'sfentity': "src/AppBundle/Entity/%s.php",
+    \ 'sfform':   "src/AppBundle/Form/Type/%sType.php",
+    \ 'sflistener': "src/AppBundle/EventListener/%sListener.php",
     \ 'sfview':   "app/Resources/views/%s.twig",
     \ 'sfconf':   "app/config/%s.yml",
     \ 'here':     "!CreateHere"
@@ -254,13 +255,14 @@ let g:ctrlp_match_func = { 'match': 'cpsm#CtrlPMatch' }
 let g:cpsm_highlight_mode = 'detailed'
 nnoremap <Space><BS> :CtrlPNerdTree<CR>
 nnoremap <Space>/ :CtrlPBufLine<CR>
-nnoremap <C-z>  :CtrlPSymfony2Sources<CR>
 nnoremap <C-z>s :CtrlP src/<CR>
-nnoremap <C-z>m :CtrlPSymfony2Entities<CR>
-nnoremap <C-z>c :CtrlPSymfony2Controllers<CR>
-nnoremap <C-z>v :CtrlPSymfony2Views<CR>
-nnoremap <C-z>a :CtrlPSymfony2Assets<CR>
-nnoremap <C-z>o :CtrlPSymfony2Configs<CR>
+nnoremap <C-z>m :CtrlPSymfonyEntities<CR>
+nnoremap <C-z>c :CtrlPSymfonyControllers<CR>
+nnoremap <C-z>v :CtrlPSymfonyViews<CR>
+nnoremap <C-z>a :CtrlPSymfonyAssets<CR>
+nnoremap <C-z>o :CtrlPSymfonyConfigs<CR>
+nnoremap <C-z>f :CtrlPSymfonyForms<CR>
+nnoremap <C-z>d :CtrlPSymfonyServices<CR>
 nnoremap <Leader>f :CtrlPFunky<CR>
 " }}}
 
