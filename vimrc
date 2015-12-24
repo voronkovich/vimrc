@@ -22,6 +22,7 @@ Plugin 'voronkovich/file-magic.vim'
 Plugin 'kana/vim-vspec'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'junegunn/vim-easy-align'
 
 " Tags
 Plugin 'ludovicchabant/vim-gutentags'
@@ -281,6 +282,10 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_php_checkers = ['php']
 " }}}
+
+" Easy align
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 " PHP {{{
 au FileType php nnoremap gf :call composer#open_file#open(expand('<cword>'))<CR>
