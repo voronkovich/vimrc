@@ -10,7 +10,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'bling/vim-airline'
 Plugin 'rking/ag.vim'
-Plugin 'Townk/vim-autoclose'
+Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
 Plugin 'embear/vim-localvimrc'
 Plugin 'Yggdroot/indentLine'
@@ -23,6 +23,7 @@ Plugin 'kana/vim-vspec'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'PeterRincker/vim-argumentative'
 
 " Tags
 Plugin 'ludovicchabant/vim-gutentags'
@@ -76,6 +77,10 @@ Plugin 'voronkovich/vim-phpunit-snippets'
 Plugin 'voronkovich/php-getter-setter.vim'
 Plugin 'voronkovich/ctrlp-symfony2.vim'
 
+" JS
+Plugin 'pangloss/vim-javascript'
+Plugin 'elzr/vim-json'
+
 " Html
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'mattn/emmet-vim'
@@ -88,6 +93,9 @@ call vundle#end()
 
 
 " Common settings {{{1
+set nobackup
+set noswapfile
+
 filetype plugin indent on
 
 let mapleader = ","
