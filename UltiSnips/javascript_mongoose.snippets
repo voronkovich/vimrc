@@ -1,0 +1,11 @@
+snippet mgsmodel "Mongoose model" b
+'use strict';
+
+const mongoose = require('mongoose');
+
+const schema = new mongoose.Schema({
+	${0:${VISUAL}}
+});
+
+module.exports = mongoose.model('`!v substitute(expand('%:t:r'), '^\l', '\u\0', '')`', schema);
+endsnippet
