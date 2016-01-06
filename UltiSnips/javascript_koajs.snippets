@@ -27,9 +27,11 @@ endsnippet
 snippet koarouter "Koa / Router module" b
 'use strict';
 
-const router = require('koa-router')();
+module.exports = function(router) {
+	${0}
 
-module.exports = router;
+	return router;
+};
 endsnippet
 
 snippet koauseroute "Koa / Router middleware" b
