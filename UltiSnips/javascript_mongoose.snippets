@@ -10,24 +10,20 @@ snippet mgsconnection "Mongoose / Create connection" b
 let ${1:db} = mongoose.createConnection('mongodb://localhost/${2:test}');
 endsnippet
 
-snippet mgsmodel "Mongoose / Model (default connection)" b
+snippet mgsmodel "Mongoose / Model" b
 'use strict';
 
 const mongoose = require('mongoose');
 
-module.exports = mongoose.model('`!v substitute(expand('%:t:r'), '^\l', '\u\0', '')`', new mongoose.Schema({
+const schema = new mongoose.Schema({
 	${0}
-}));
-endsnippet
-
-snippet mgsmodelc "Mongoose / Model (custom connection)" b
-'use strict';
-
-const Schema = require('mongoose').Schema;
+});
 
 module.exports = function(connection) {
-	return connection.model('`!v substitute(expand('%:t:r'), '^\l', '\u\0', '')`', new Schema({
-		${0}
-	}));
+	connection = connection || mongoose;
+
+	return connection.model('`!v substitute(expand('%:t:r'), '^\l', '\u\0', '')`', schema);
 };
+
+module.exports.schema = schema;
 endsnippet
