@@ -63,7 +63,7 @@ Plugin 'StanAngeloff/php.vim'
 Plugin '2072/PHP-Indenting-for-VIm'
 Plugin 'rayburgemeestre/phpfolding.vim'
 " Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'mkusher/padawan.vim'
+" Plugin 'mkusher/padawan.vim'
 Plugin 'tobyS/pdv'
 Plugin 'tobyS/vmustache'
 Plugin 'docteurklein/vim-symfony'
@@ -260,7 +260,7 @@ if executable('ag')
           \ -g ""'
 endif
 let g:ctrlp_extensions = ['funky', 'nerdtree']
-let g:ctrlp_match_func = { 'match': 'cpsm#CtrlPMatch' }
+" let g:ctrlp_match_func = { 'match': 'cpsm#CtrlPMatch' }
 let g:cpsm_highlight_mode = 'detailed'
 nnoremap <Space><BS> :CtrlPNerdTree<CR>
 nnoremap <Space>/ :CtrlPBufLine<CR>
