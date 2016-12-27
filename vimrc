@@ -56,6 +56,7 @@ Plugin 'sniphpets/sniphpets-symfony'
 Plugin 'sniphpets/sniphpets-doctrine'
 Plugin 'sniphpets/sniphpets-phpunit'
 Plugin 'sniphpets/sniphpets-postfix-codes'
+Plugin 'sniphpets/sniphpets-sylius'
 Plugin 'voronkovich/ultisnips-t3js'
 
 " PHP
@@ -64,7 +65,7 @@ Plugin '2072/PHP-Indenting-for-VIm'
 Plugin 'rayburgemeestre/phpfolding.vim'
 " Plugin 'shawncplus/phpcomplete.vim'
 " Plugin 'mkusher/padawan.vim'
-Plugin 'php-vim/phpcd.vim'
+" Plugin 'php-vim/phpcd.vim'
 Plugin 'tobyS/pdv'
 Plugin 'tobyS/vmustache'
 Plugin 'docteurklein/vim-symfony'
@@ -247,13 +248,15 @@ let g:ctrlp_match_window = 'max:20'
 let g:ctrlp_working_path_mode = 0
 if executable('ag')
     let g:ctrlp_user_command = 'ag %s -iU --nocolor --nogroup --hidden
-          \ --ignore .git
-          \ --ignore .svn
-          \ --ignore .hg
-          \ --ignore .DS_Store
+          \ --ignore ".git"
+          \ --ignore ".svn"
+          \ --ignore ".hg"
+          \ --ignore ".DS_Store"
+          \ --ignore ".phpcd"
           \ --ignore "**/.*.swp"
           \ --ignore "**/*.pyc"
           \ --ignore "app/cache"
+          \ --ignore "var/cache"
           \ --ignore "bin"
           \ --ignore "build"
           \ --ignore "vendor/composer"
