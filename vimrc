@@ -183,8 +183,9 @@ nnoremap <leader>R :call Replace(expand('<cWORD>'))<CR>
 " Ultisnips {{{
 let g:UltiSnipsSnippetDirectories=[ "UltiSnips", $HOME . '/.vim/vimrc/UltiSnips' ]
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsListSnippets="<s-tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " }}}
 
 " Airline
@@ -342,7 +343,7 @@ noremap <Leader>pe :call PhpExpandClass()<CR>
 inoremap <silent><leader>pn :call PhpNamespaceInsert()<CR>
 noremap <silent><leader>pn :call PhpNamespaceInsert()<CR>
 
-" Sniphpets 
+" Sniphpets
 " Override a default namespace resolving function
 fun! sniphpets#resolve_namespace()
     " See https://github.com/dantleech/vim-phpnamespace
