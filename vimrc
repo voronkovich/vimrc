@@ -9,7 +9,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'bling/vim-airline'
-Plugin 'rking/ag.vim'
+Plugin 'wincent/ferret'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
 Plugin 'embear/vim-localvimrc'
@@ -17,7 +17,6 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'xolox/vim-misc'
 Plugin 'scrooloose/syntastic'
 Plugin 'duggiefresh/vim-easydir'
-" Plugin 'mhinz/vim-startify'
 Plugin 'voronkovich/file-magic.vim'
 Plugin 'kana/vim-vspec'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
@@ -63,18 +62,17 @@ Plugin 'voronkovich/ultisnips-t3js'
 Plugin 'StanAngeloff/php.vim'
 Plugin '2072/PHP-Indenting-for-VIm'
 Plugin 'rayburgemeestre/phpfolding.vim'
-" Plugin 'shawncplus/phpcomplete.vim'
-" Plugin 'mkusher/padawan.vim'
-" Plugin 'php-vim/phpcd.vim'
+Plugin 'php-vim/phpcd.vim'
 Plugin 'tobyS/pdv'
 Plugin 'tobyS/vmustache'
-Plugin 'docteurklein/vim-symfony'
-Plugin 'arnaud-lb/vim-php-namespace'
+" Conficts with YCM
+" Plugin 'docteurklein/vim-symfony'
+" Plugin 'arnaud-lb/vim-php-namespace'
+Plugin 'noahfrederick/vim-composer'
 Plugin 'dantleech/vim-phpnamespace'
 " Plugin 'joonty/vim-phpunitqf.git'
 Plugin 'evidens/vim-twig'
 Plugin 'adoy/vim-php-refactoring-toolbox'
-" Plugin 'voronkovich/vim-composer-open-class-file'
 Plugin 'voronkovich/vim-phpunit-snippets'
 Plugin 'voronkovich/php-getter-setter.vim'
 Plugin 'voronkovich/ctrlp-symfony2.vim'
@@ -203,8 +201,8 @@ nnoremap <BS> :NERDTreeToggle<CR>
 nnoremap <C-n> :NERDTreeFind<CR>
 let NERDTreeQuitOnOpen = 1
 
-" Ag
-nnoremap <Leader>a :Ag
+" Ferret
+nnoremap <Leader>a :Ack 
 
 " Saving by Ctrl+a
 nnoremap <C-a> <Esc>:w<CR>
@@ -318,7 +316,7 @@ au FileType php nnoremap <Leader>ta :Test<CR>
 au FileType php nnoremap <Leader>tf :Test %<CR>
 
 " PHPDoc
-let g:pdv_template_dir = $HOME . "/.vim/bundle/pdv/templates_snip"
+let g:pdv_template_dir = $HOME . "/.vim/vimrc/pdv_templates_snip"
 au FileType php nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
 
 " PHP getset plugin
@@ -343,6 +341,13 @@ inoremap <Leader>pe <C-O>:call PhpExpandClass()<CR>
 noremap <Leader>pe :call PhpExpandClass()<CR>
 inoremap <silent><leader>pn :call PhpNamespaceInsert()<CR>
 noremap <silent><leader>pn :call PhpNamespaceInsert()<CR>
+
+" Sniphpets 
+" Override a default namespace resolving function
+fun! sniphpets#resolve_namespace()
+    " See https://github.com/dantleech/vim-phpnamespace
+    return PhpNamespaceGet()
+endf
 
 " Advanced highlighting
 function! PhpSyntaxOverride()
