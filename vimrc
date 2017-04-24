@@ -23,6 +23,7 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'PeterRincker/vim-argumentative'
+Plugin 'janko-m/vim-test'
 
 " Tags
 Plugin 'ludovicchabant/vim-gutentags'
@@ -205,6 +206,13 @@ let NERDTreeQuitOnOpen = 1
 " Ferret
 nnoremap <Leader>a :Ack 
 
+" vim-test
+nnoremap <Leader>tf :TestFile<CR>
+nnoremap <Leader>tl :TestLast<CR>
+nnoremap <Leader>tn :TestNearest<CR>
+nnoremap <Leader>ts :TestSuite<CR>
+nnoremap <Leader>tv :TestVisit<CR>
+
 " Saving by Ctrl+a
 nnoremap <C-a> <Esc>:w<CR>
 inoremap <C-a> <Esc>:w<CR>
@@ -247,17 +255,18 @@ let g:ctrlp_match_window = 'max:20'
 let g:ctrlp_working_path_mode = 0
 if executable('ag')
     let g:ctrlp_user_command = 'ag %s -iU --nocolor --nogroup --hidden
-          \ --ignore ".git"
-          \ --ignore ".svn"
-          \ --ignore ".hg"
-          \ --ignore ".DS_Store"
-          \ --ignore ".phpcd"
-          \ --ignore "**/.*.swp"
           \ --ignore "**/*.pyc"
+          \ --ignore "**/.*.swp"
+          \ --ignore ".DS_Store"
+          \ --ignore ".git"
+          \ --ignore ".hg"
+          \ --ignore ".local_repo"
+          \ --ignore ".phpcd"
+          \ --ignore ".svn"
           \ --ignore "app/cache"
-          \ --ignore "var/cache"
           \ --ignore "bin"
           \ --ignore "build"
+          \ --ignore "var/cache"
           \ --ignore "vendor/composer"
           \ --ignore "web/bundles"
           \ -g ""'
@@ -310,11 +319,6 @@ if has("gui_running")
 else
     inoremap <Nul> <C-x><C-o>
 endif
-
-" PHPUnit
-au FileType php nnoremap <Leader>tc :Test 
-au FileType php nnoremap <Leader>ta :Test<CR>
-au FileType php nnoremap <Leader>tf :Test %<CR>
 
 " PHPDoc
 let g:pdv_template_dir = $HOME . "/.vim/vimrc/pdv_templates_snip"
