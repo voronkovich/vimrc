@@ -15,7 +15,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'embear/vim-localvimrc'
 Plugin 'Yggdroot/indentLine'
 Plugin 'xolox/vim-misc'
-Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'duggiefresh/vim-easydir'
 Plugin 'voronkovich/file-magic.vim'
 Plugin 'kana/vim-vspec'
@@ -283,6 +283,7 @@ nnoremap <C-z>v :CtrlPSymfonyViews<CR>
 nnoremap <C-z>a :CtrlPSymfonyAssets<CR>
 nnoremap <C-z>o :CtrlPSymfonyConfigs<CR>
 nnoremap <C-z>f :CtrlPSymfonyForms<CR>
+nnoremap <C-z>l :CtrlPSymfonyListeners<CR>
 nnoremap <C-z>d :CtrlPSymfonyServices<CR>
 nnoremap <Leader>f :CtrlPFunky<CR>
 " }}}
