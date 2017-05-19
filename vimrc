@@ -6,35 +6,31 @@ call vundle#begin()
 
 " Common
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'bling/vim-airline'
-Plugin 'wincent/ferret'
-Plugin 'Raimondi/delimitMate'
-Plugin 'tpope/vim-surround'
-Plugin 'embear/vim-localvimrc'
-Plugin 'Yggdroot/indentLine'
-Plugin 'xolox/vim-misc'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'duggiefresh/vim-easydir'
-Plugin 'voronkovich/file-magic.vim'
-Plugin 'kana/vim-vspec'
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'junegunn/vim-easy-align'
 Plugin 'PeterRincker/vim-argumentative'
+Plugin 'Raimondi/delimitMate'
+Plugin 'Yggdroot/indentLine'
+Plugin 'bling/vim-airline'
+Plugin 'duggiefresh/vim-easydir'
+Plugin 'easymotion/vim-easymotion'
 Plugin 'janko-m/vim-test'
-
-" Tags
-Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'kana/vim-vspec'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'voronkovich/file-magic.vim'
+Plugin 'wincent/ferret'
+Plugin 'xolox/vim-misc'
 
 " CtrlP
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'nixprime/cpsm'
-Plugin 'tacahiroy/ctrlp-funky'
-Plugin 'kassio/ctrlp-bufline.vim'
 Plugin 'fisadev/vim-ctrlp-cmdpalette'
 Plugin 'ivalkeen/vim-ctrlp-tjump'
+Plugin 'kassio/ctrlp-bufline.vim'
+Plugin 'nixprime/cpsm'
+Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'voronkovich/ctrlp-nerdtree.vim'
 
 " Colorschemes
@@ -52,31 +48,30 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'sniphpets/sniphpets'
 Plugin 'sniphpets/sniphpets-common'
-Plugin 'sniphpets/sniphpets-symfony'
 Plugin 'sniphpets/sniphpets-doctrine'
 Plugin 'sniphpets/sniphpets-phpunit'
 Plugin 'sniphpets/sniphpets-postfix-codes'
 Plugin 'sniphpets/sniphpets-sylius'
+Plugin 'sniphpets/sniphpets-symfony'
 Plugin 'voronkovich/ultisnips-t3js'
 
 " PHP
-Plugin 'StanAngeloff/php.vim'
+" Conficts with YCM
+" Plugin 'arnaud-lb/vim-php-namespace'
+" Plugin 'docteurklein/vim-symfony'
 Plugin '2072/PHP-Indenting-for-VIm'
-Plugin 'rayburgemeestre/phpfolding.vim'
+Plugin 'StanAngeloff/php.vim'
+Plugin 'adoy/vim-php-refactoring-toolbox'
+Plugin 'dantleech/vim-phpnamespace'
+Plugin 'evidens/vim-twig'
+Plugin 'noahfrederick/vim-composer'
 Plugin 'php-vim/phpcd.vim'
+Plugin 'rayburgemeestre/phpfolding.vim'
 Plugin 'tobyS/pdv'
 Plugin 'tobyS/vmustache'
-" Conficts with YCM
-" Plugin 'docteurklein/vim-symfony'
-" Plugin 'arnaud-lb/vim-php-namespace'
-Plugin 'noahfrederick/vim-composer'
-Plugin 'dantleech/vim-phpnamespace'
-" Plugin 'joonty/vim-phpunitqf.git'
-Plugin 'evidens/vim-twig'
-Plugin 'adoy/vim-php-refactoring-toolbox'
-Plugin 'voronkovich/vim-phpunit-snippets'
-Plugin 'voronkovich/php-getter-setter.vim'
 Plugin 'voronkovich/ctrlp-symfony2.vim'
+Plugin 'voronkovich/php-getter-setter.vim'
+Plugin 'voronkovich/vim-phpunit-snippets'
 
 " JS
 Plugin 'pangloss/vim-javascript'
@@ -231,7 +226,8 @@ let g:file_magic_spells = {
     \ 'sflistener': "src/AppBundle/EventListener/%sListener.php",
     \ 'sfview':   "app/Resources/views/%s.twig",
     \ 'sfconf':   "app/config/%s.yml",
-    \ 'here':     "!CreateHere"
+    \ 'here':     "!CreateHere",
+    \ 'test':     "!CreateTest"
 \ }
 " Create file in the same directory as the current buffer
 fun! CreateHere(key, file)
@@ -242,6 +238,13 @@ fun! CreateHere(key, file)
     else
         return a:file
     endif
+endfun
+" Create phpunit test
+fun! CreateTest(key)
+    let test_file = substitute(expand('%:p'), '/src/', '/tests/', '')
+    let test_file = substitute(test_file, '.php$', 'Test.php', '')
+
+    return test_file
 endfun
 " }}}
 
@@ -277,6 +280,7 @@ let g:cpsm_highlight_mode = 'detailed'
 nnoremap <Space><BS> :CtrlPNerdTree<CR>
 nnoremap <Space>/ :CtrlPBufLine<CR>
 nnoremap <C-z>s :CtrlP src/<CR>
+nnoremap <C-z>t :CtrlP tests/<CR>
 nnoremap <C-z>m :CtrlPSymfonyEntities<CR>
 nnoremap <C-z>c :CtrlPSymfonyControllers<CR>
 nnoremap <C-z>v :CtrlPSymfonyViews<CR>
