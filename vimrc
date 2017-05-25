@@ -71,6 +71,7 @@ Plugin 'tobyS/pdv'
 Plugin 'tobyS/vmustache'
 Plugin 'voronkovich/ctrlp-symfony2.vim'
 Plugin 'voronkovich/php-getter-setter.vim'
+Plugin 'voronkovich/vim-composer-open-class-file'
 Plugin 'voronkovich/vim-phpunit-snippets'
 
 " JS
