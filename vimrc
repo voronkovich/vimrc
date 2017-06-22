@@ -5,9 +5,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Common
-Plugin 'VundleVim/Vundle.vim'
 Plugin 'PeterRincker/vim-argumentative'
 Plugin 'Raimondi/delimitMate'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'bling/vim-airline'
 Plugin 'duggiefresh/vim-easydir'
@@ -18,6 +18,7 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'kana/vim-vspec'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdtree'
+Plugin 'sgur/vim-editorconfig'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'voronkovich/file-magic.vim'
