@@ -29,7 +29,6 @@ Plugin 'xolox/vim-misc'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'fisadev/vim-ctrlp-cmdpalette'
 Plugin 'ivalkeen/vim-ctrlp-tjump'
-Plugin 'kassio/ctrlp-bufline.vim'
 Plugin 'nixprime/cpsm'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'voronkovich/ctrlp-nerdtree.vim'
@@ -67,6 +66,7 @@ Plugin 'dantleech/vim-phpnamespace'
 Plugin 'evidens/vim-twig'
 Plugin 'noahfrederick/vim-composer'
 Plugin 'php-vim/phpcd.vim'
+" Plugin 'phpactor/phpactor'
 Plugin 'rayburgemeestre/phpfolding.vim'
 Plugin 'tobyS/pdv'
 Plugin 'tobyS/vmustache'
@@ -95,6 +95,8 @@ set nobackup
 set noswapfile
 
 filetype plugin indent on
+
+syntax on
 
 let mapleader = ","
 
@@ -280,7 +282,7 @@ let g:ctrlp_extensions = ['funky', 'nerdtree']
 " let g:ctrlp_match_func = { 'match': 'cpsm#CtrlPMatch' }
 let g:cpsm_highlight_mode = 'detailed'
 nnoremap <Space><BS> :CtrlPNerdTree<CR>
-nnoremap <Space>/ :CtrlPBufLine<CR>
+nnoremap <Space>/ :CtrlPLine<CR>
 nnoremap <C-z>s :CtrlP src/<CR>
 nnoremap <C-z>t :CtrlP tests/<CR>
 nnoremap <C-z>m :CtrlPSymfonyEntities<CR>
