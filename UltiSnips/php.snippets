@@ -1,6 +1,20 @@
 snippet putest "PHPUnit test"
-public function test_${1:feature}_should${2:Do}${3:_if${4:Condition}}()
+public function test_${1:feature}_should${2:Do}()
 {
-	${0}
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet putesti "PHPUnit test (if)"
+public function test_${1:feature}_should${2:Do}_if${3:Condition}()
+{
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet putestw "PHPUnit test (with)"
+public function test_${1:feature}_should${2:Do}_with${3:State}()
+{
+	${VISUAL}${0}
 }
 endsnippet
