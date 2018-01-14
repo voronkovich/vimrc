@@ -1,19 +1,21 @@
-snippet putest "PHPUnit test"
-public function test_${1:feature}_should${2:Do}()
+snippet putesta "PHPUnit test" b
+/** @test */
+public function ${1}()
 {
 	${VISUAL}${0}
 }
 endsnippet
 
-snippet putesti "PHPUnit test (if)"
-public function test_${1:feature}_should${2:Do}_if${3:Condition}()
+snippet puit "PHPUnit test (it)" b
+public function testIt${1}()
 {
 	${VISUAL}${0}
 }
 endsnippet
 
-snippet putestw "PHPUnit test (with)"
-public function test_${1:feature}_should${2:Do}_with${3:State}()
+snippet puita "PHPUnit test (it)" b
+/** @test */
+public function it${1}()
 {
 	${VISUAL}${0}
 }
