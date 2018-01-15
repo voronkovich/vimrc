@@ -15,7 +15,6 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'janko-m/vim-test'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'junegunn/vim-easy-align'
-Plugin 'kana/vim-vspec'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdtree'
 Plugin 'sgur/vim-editorconfig'
@@ -31,10 +30,9 @@ Plugin 'fisadev/vim-ctrlp-cmdpalette'
 Plugin 'ivalkeen/vim-ctrlp-tjump'
 Plugin 'nixprime/cpsm'
 Plugin 'tacahiroy/ctrlp-funky'
-Plugin 'voronkovich/ctrlp-nerdtree.vim'
 
 " Colorschemes
-Plugin 'xolox/vim-colorscheme-switcher'
+" Plugin 'xolox/vim-colorscheme-switcher'
 Plugin 'flazz/vim-colorschemes'
 
 " Comments
@@ -50,10 +48,10 @@ Plugin 'sniphpets/sniphpets'
 Plugin 'sniphpets/sniphpets-common'
 Plugin 'sniphpets/sniphpets-doctrine'
 Plugin 'sniphpets/sniphpets-phpunit'
+Plugin 'sniphpets/sniphpets-peridot'
 Plugin 'sniphpets/sniphpets-postfix-codes'
 Plugin 'sniphpets/sniphpets-sylius'
 Plugin 'sniphpets/sniphpets-symfony'
-Plugin 'voronkovich/ultisnips-t3js'
 
 " PHP
 " Conficts with YCM
@@ -73,11 +71,9 @@ Plugin 'tobyS/vmustache'
 Plugin 'voronkovich/ctrlp-symfony2.vim'
 Plugin 'voronkovich/php-getter-setter.vim'
 Plugin 'voronkovich/vim-composer-open-class-file'
-Plugin 'voronkovich/vim-phpunit-snippets'
 
 " JS
 Plugin 'pangloss/vim-javascript'
-Plugin 'elzr/vim-json'
 
 " Html
 Plugin 'Valloric/MatchTagAlways'
@@ -211,6 +207,7 @@ nnoremap <Leader>tl :TestLast<CR>
 nnoremap <Leader>tn :TestNearest<CR>
 nnoremap <Leader>ts :TestSuite<CR>
 nnoremap <Leader>tv :TestVisit<CR>
+" let test#php#phpunit#options = { 'file': '--testdox' }
 
 " Saving by Ctrl+a
 nnoremap <C-a> <Esc>:w<CR>
@@ -359,7 +356,7 @@ noremap <silent><leader>pn :call PhpNamespaceInsert()<CR>
 
 " Sniphpets
 " Override a default namespace resolving function
-fun! sniphpets#resolve_namespace()
+fun! sniphpets#namespace()
     " See https://github.com/dantleech/vim-phpnamespace
     return PhpNamespaceGet()
 endf
