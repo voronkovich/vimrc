@@ -207,7 +207,9 @@ nnoremap <Leader>tl :TestLast<CR>
 nnoremap <Leader>tn :TestNearest<CR>
 nnoremap <Leader>ts :TestSuite<CR>
 nnoremap <Leader>tv :TestVisit<CR>
-" let test#php#phpunit#options = { 'file': '--testdox' }
+let test#php#phpunit#options = { 'file': '--testdox' }
+" let test#php#phpunit#options = '--testdox'
+let test#php#phpspec#options = '--format=pretty'
 
 " Saving by Ctrl+a
 nnoremap <C-a> <Esc>:w<CR>
@@ -270,8 +272,10 @@ if executable('ag')
           \ --ignore "app/cache"
           \ --ignore "bin"
           \ --ignore "build"
+          \ --ignore "public/bundles"
           \ --ignore "var/cache"
-          \ --ignore "vendor/composer"
+          \ --ignore "var/data"
+          \ --ignore "vendor"
           \ --ignore "web/bundles"
           \ -g ""'
 endif
@@ -280,7 +284,7 @@ let g:ctrlp_extensions = ['funky', 'nerdtree']
 let g:cpsm_highlight_mode = 'detailed'
 nnoremap <Space><BS> :CtrlPNerdTree<CR>
 nnoremap <Space>/ :CtrlPLine<CR>
-nnoremap <C-z>s :CtrlP src/<CR>
+nnoremap <CR>   :CtrlP<CR>
 nnoremap <C-z>t :CtrlP tests/<CR>
 nnoremap <C-z>m :CtrlPSymfonyEntities<CR>
 nnoremap <C-z>c :CtrlPSymfonyControllers<CR>
@@ -356,10 +360,10 @@ noremap <silent><leader>pn :call PhpNamespaceInsert()<CR>
 
 " Sniphpets
 " Override a default namespace resolving function
-fun! sniphpets#namespace()
-    " See https://github.com/dantleech/vim-phpnamespace
-    return PhpNamespaceGet()
-endf
+" fun! sniphpets#namespace()
+"     " See https://github.com/dantleech/vim-phpnamespace
+"     return PhpNamespaceGet()
+" endf
 
 " Advanced highlighting
 function! PhpSyntaxOverride()
